@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<head>
+    <title> Toronto Fire Incidents</title>
+</head>
+<body>
+    <script src="http://d3js.org/d3.v3.min.js"></script>
+    <script src="http://d3js.org/topojson.v1.min.js"></script>
+    <!--Newer version of the libraries, still conflicting syntax with the base code-->
+    <!--<script src="https://d3js.org/d3.v5.min.js"></script>
+    <script src="https://d3js.org/topojson.v2.min.js"></script>-->
+    <style type="text/css">
+        
+        .wrapper {
+            margin-left: auto;
+            margin-right: auto;
+            width: 800px;
+        }
+
+        .map_mesh {
+            fill: none;
+            stroke: #fff;
+            stroke-width: .5px;
+            stroke-linejoin: round;
+        }
+
+        .map_outline {
+            fill: #ddd;
+            stroke: #000;
+            stroke-width: 1.5px;
+        }
+
+        .map_neighbourhood {
+            fill: #DC1C13;
+        }
+
+        .map_neighbourhood:hover {
+            fill: #636363;
+            cursor: pointer;
+        }
+        
+    </style>
+    
+    <!--   center svg in div   -->
+    <div class="wrapper">
+        <!--Gradient Legend-->
+        <div id="legend1"></div>
+        <!--Vertical box legend-->
+        <div class="legend2"></div>
+    </div>
+    <script>
+        var mapWidth = 550,
+            mapHeight = 550;
+
+        var c10 = d3.scale.category10();
+        /* In newer version
+        d3.scaleOrdinal(d3.schemeCategory10);
+        */
+
+        var projection = d3.geo.albers();
+        /* In newer version
+        var projection = d3.geoAlbers();
+        */
+
+        var path = d3.geo.path()
+            .projection(projection);
+        /* In newer version -- NO ERROR BUT NOT WORKING
+        var path = d3.geoPath()
+            .projection(projection);
+        */
+
+        var svg = d3.select(".wrapper").append("svg")
+            .attr("width", mapWidth)
+            .attr("height", mapHeight);
+
+        var mapLabel = svg.append("text")
+            .attr("y", 20)
+            .attr("x", 0)
+            .attr("class", "map_neighbourhood_name")
+
+        // load TopoJSON file
+        d3.json("toronto_topo.json", function(error, toronto) {
+          if (error) throw error;
+
+          var neighbourhoods = topojson.feature(toronto, toronto.objects.toronto); 
+
+          // set default projection values 
+          projection
+              .scale(1)
+              .translate([0, 0]);
+
+          // creates bounding box and helps with projection and scaling
+          var b = path.bounds(neighbourhoods),
+              s = .95 / Math.max((b[1][0] - b[0][0]) / mapWidth, (b[1][1] - b[0][1]) / mapHeight),
+              t = [(mapWidth - s * (b[1][0] + b[0][0])) / 2, (mapHeight - s * (b[1][1] + b[0][1])) / 2];
+
+          // set project with bounding box data
+          projection
+              .scale(s)
+              .translate(t);
+
+          // get individual neighbourhoods
+          svg.selectAll("path")
+                .data(neighbourhoods.features)
+              .enter().append("path")
+                .attr("class", "map_neighbourhood")
+                .attr("d", path)
+                .on("mouseover", mouseover) 
+                .on("mouseout", mouseout)
+                .on("click", clicked)
+
+          // add the mesh/path between neighbourhoods
+          svg.append("path")
+                .datum(topojson.mesh(toronto, toronto.objects.toronto, function(a, b) { return a !== b; }))
+                .attr("class", "map_mesh")
+                .attr("d", path);
+
+                function mouseover(d) {     
+          mapLabel.text(d.properties.name.slice(0,-5)) // remove suffix id from name
+        }
+
+        function mouseout(d) {     
+          mapLabel.text("")  // remove out name
+        }
+
+        function clicked(d) {
+          console.log(d.properties.id, d.properties.name) // verify everything looks good
+          // Add code here
+        }
+
+        /* LEGEND */
+        var w = 300, h = 50;
+
+        var key = d3.select("#legend1")
+        .append("svg")
+        .attr("width", w)
+        .attr("height", h);
+
+        var legend = key.append("defs")
+        .append("svg:linearGradient")
+        .attr("id", "gradient")
+        .attr("x1", "0%")
+        .attr("y1", "100%")
+        .attr("x2", "100%")
+        .attr("y2", "100%")
+        .attr("spreadMethod", "pad");
+
+        legend.append("stop")
+        .attr("offset", "0%")
+        .attr("stop-color", "#F1959B")
+        .attr("stop-opacity", 1);
+
+        legend.append("stop")
+        .attr("offset", "33%")
+        .attr("stop-color", "#F07470")
+        .attr("stop-opacity", 1);
+
+        legend.append("stop")
+        .attr("offset", "66%")
+        .attr("stop-color", "#EA4C46")
+        .attr("stop-opacity", 1);
+
+        legend.append("stop")
+        .attr("offset", "100%")
+        .attr("stop-color", "#DC1C13")
+        .attr("stop-opacity", 1);
+
+        key.append("rect")
+        .attr("width", w)
+        .attr("height", h - 30)
+        .style("fill", "url(#gradient)")
+        .attr("transform", "translate(0,10)");
+
+        /* This needs newer version of the libraries)*/
+        var y = d3.scaleLinear()
+        .range([300, 0])
+        .domain([68, 12]);
+
+        var yAxis = d3.axisBottom()
+        .scale(y)
+        .ticks(5);
+
+        key.append("g")
+        .attr("class", "y axis")
+        .attr("transform", "translate(0,30)")
+        .call(yAxis)
+        .append("text")
+        .attr("transform", "rotate(-90)")
+        .attr("y", 0)
+        .attr("dy", ".71em")
+        .style("text-anchor", "end")
+        .text("axis title");
+        
+        /* END OF LEGEND 1 */
+
+        /* START OF LEGEND 2 - NOT WORKING */
+        var legendVals2 = ["< x incidents", "x - xx incidents", "xx - xxx incidents", "> xxx incidents"]
+        var color = ["#F1959B", "#F07470", "#EA4C46", "#DC1C13"]
+
+        var legendVals1 = d3.scale.ordinal()
+            .domain(legendVals2)
+            .range(["#F1959B", "#F07470", "#EA4C46", "#DC1C13"]);
+        
+        var svgLegned3 = d3.select(".legend3").append("svg")
+            .attr("width", width).attr("height", height)
+        var legend3 = svgLegned3.selectAll('.legend3')
+            .data(legendVals1.domain())
+            .enter().append('g')
+            .attr("class", "legends3")
+            .attr("transform", function (d, i) { {return "translate(0," + i * 20 + ")"}
+        })
+        
+        legend3.append('rect')
+            .attr("x", 0)
+            .attr("y", 0)
+            .attr("width", 10)
+            .attr("height", 10)
+            .style("fill", function (d, i) {
+            return color(i)
+        })
+        
+        legend3.append('text')
+            .attr("x", 20)
+            .attr("y", 10)
+        //.attr("dy", ".35em")
+            .text(function (d, i) {return d})
+            .attr("class", "textselected")
+            .style("text-anchor", "start")
+            .style("font-size", 15)
+
+        });
+
+
+    </script> 
+    </body>
+</html>
