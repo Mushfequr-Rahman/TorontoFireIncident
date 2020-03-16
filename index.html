@@ -1,15 +1,17 @@
 <!DOCTYPE html>
+
 <head>
     <title> Toronto Fire Incidents</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <script src="http://d3js.org/d3.v3.min.js"></script>
     <script src="http://d3js.org/topojson.v1.min.js"></script>
     <!--Newer version of the libraries, still conflicting syntax with the base code-->
     <!--<script src="https://d3js.org/d3.v5.min.js"></script>
     <script src="https://d3js.org/topojson.v2.min.js"></script>-->
-    
+
     <!--   center svg in div   -->
     <div class="wrapper">
         <!--Gradient Legend-->
@@ -49,157 +51,245 @@
 
         // load TopoJSON file
         d3.json("toronto_topo.json", function(error, toronto) {
-          if (error) throw error;
+            if (error) throw error;
+            // Load Toronto Fire Dataset here: 
+            d3.json("Fire_Incidents_Data.json", function(error, fire) {
+                console.log("Fire Dataset: ", fire)
+                    /*
+                    Fire Dataset attributes: 
+                    Smoke_Alarm_at_Fire_Orgin_Alaram Failure: Mostly null 
+                    Count_of_Persons_Rescued: 0
+                    TFS_Arrival_Time: "2015-08-29T11:52:19"
+                    Incident_Station_Area: 412
+                    Building_Status: null
+                    Smoke_Alarm_at_Fire_Origin_Alarm_Type: null
+                    Level_Of_Origin: null
+                    Latitude: 43.72274
+                    Exposures: null
+                    Ignition_Source: "81 - Vehicle - Electrical"
+                    Property_Use: "850 - Parking Lot Kiosk"
+                    Status_of_Fire_On_Arrival: "3 - Fire with smoke showing only - including vehicle, outdoor fires"
+                    Civilian_Casualties: 0
+                    Sprinkler_System_Presence: null
+                    Smoke_Alarm_Impact_on_Persons_Evacuating_Impact_on_Evacuation: null
+                    Method_Of_Fire_Control: "1 - Extinguished by fire department"
+                    Incident_Ward: 2
+                    Business_Impact: null
+                    Number_of_responding_apparatus: 1
+                    Intersection: "Highway 27 S / Queen's Plate Dr"
+                    Fire_Alarm_System_Operation: null
+                    Sprinkler_System_Operation: null
+                    Fire_Alarm_System_Impact_on_Evacuation: null
+                    Fire_Under_Control_Time: "2015-08-29T12:13:53"
+                    Estimated_Dollar_Loss: 1000
+                    Estimated_Number_Of_Persons_Displaced: null
+                    Final_Incident_Type: "01 - Fire"
+                    Area_of_Origin: "81 - Engine Area"
+                    Longitude: -79.59822
+                    TFS_Firefighter_Casualties: 0
+                    Smoke_Alarm_at_Fire_Origin: null
+                    Material_First_Ignited: "16 - Insulation"
+                    Fire_Alarm_System_Presence: null
+                    _id: 441424
+                    Extent_Of_Fire: null
+                    Number_of_responding_personnel: 4
+                    Possible_Cause: "51 - Mechanical Failure"
+                    Last_TFS_Unit_Clear_Time: "2015-08-29T12:40:36"
+                    Initial_CAD_Event_Type: "VEF"
+                    Smoke_Spread: null
+                    TFS_Alarm_Time: "2015-08-29T11:52:04"
+                    Incident_Number: "F15080769"
+                    Ext_agent_app_or_defer_time: "2015-08-29T11:52:31"
+                    */
 
-          var neighbourhoods = topojson.feature(toronto, toronto.objects.toronto); 
+                // TODO: Map the fire incidents as little circles on to the map. 
 
-          // set default projection values 
-          projection
-              .scale(1)
-              .translate([0, 0]);
 
-          // creates bounding box and helps with projection and scaling
-          var b = path.bounds(neighbourhoods),
-              s = .95 / Math.max((b[1][0] - b[0][0]) / mapWidth, (b[1][1] - b[0][1]) / mapHeight),
-              t = [(mapWidth - s * (b[1][0] + b[0][0])) / 2, (mapHeight - s * (b[1][1] + b[0][1])) / 2];
 
-          // set project with bounding box data
-          projection
-              .scale(s)
-              .translate(t);
 
-          // get individual neighbourhoods
-          svg.selectAll("path")
-                .data(neighbourhoods.features)
-              .enter().append("path")
-                .attr("class", "map_neighbourhood")
-                .attr("d", path)
-                .on("mouseover", mouseover) 
-                .on("mouseout", mouseout)
-                .on("click", clicked)
+                var neighbourhoods = topojson.feature(toronto, toronto.objects.toronto);
 
-          // add the mesh/path between neighbourhoods
-          svg.append("path")
-                .datum(topojson.mesh(toronto, toronto.objects.toronto, function(a, b) { return a !== b; }))
-                .attr("class", "map_mesh")
-                .attr("d", path);
 
-                function mouseover(d) {     
-          mapLabel.text(d.properties.name.slice(0,-5)) // remove suffix id from name
-        }
+                /*
+                var cScale = d3.scaleThreshold()
+                    .domain([10, 100, 1000, 10000, 100000])
+                    .range(d3.schemeReds[5]);
+                */
 
-        function mouseout(d) {     
-          mapLabel.text("")  // remove out name
-        }
+                // set default projection values 
+                projection
+                    .scale(1)
+                    .translate([0, 0]);
 
-        function clicked(d) {
-          console.log(d.properties.id, d.properties.name) // verify everything looks good
-          // Add code here
-        }
+                // creates bounding box and helps with projection and scaling
+                var b = path.bounds(neighbourhoods),
+                    s = .95 / Math.max((b[1][0] - b[0][0]) / mapWidth, (b[1][1] - b[0][1]) / mapHeight),
+                    t = [(mapWidth - s * (b[1][0] + b[0][0])) / 2, (mapHeight - s * (b[1][1] + b[0][1])) / 2];
 
-        /* LEGEND */
-        var w = 300, h = 50;
+                // set project with bounding box data
+                projection
+                    .scale(s)
+                    .translate(t);
 
-        var key = d3.select("#legend1")
-        .append("svg")
-        .attr("width", w)
-        .attr("height", h);
+                // get individual neighbourhoods
+                svg.selectAll("path")
+                    .data(neighbourhoods.features)
+                    .enter().append("path")
+                    .attr("class", "map_neighbourhood")
+                    .attr("d", path)
+                    .on("mouseover", mouseover)
+                    .on("mouseout", mouseout)
+                    .on("click", clicked)
 
-        var legend = key.append("defs")
-        .append("svg:linearGradient")
-        .attr("id", "gradient")
-        .attr("x1", "0%")
-        .attr("y1", "100%")
-        .attr("x2", "100%")
-        .attr("y2", "100%")
-        .attr("spreadMethod", "pad");
+                // add the mesh/path between neighbourhoods
+                svg.append("path")
+                    .datum(topojson.mesh(toronto, toronto.objects.toronto, function(a, b) {
+                        return a !== b;
+                    }))
+                    .attr("class", "map_mesh")
+                    .attr("d", path);
 
-        legend.append("stop")
-        .attr("offset", "0%")
-        .attr("stop-color", "#F1959B")
-        .attr("stop-opacity", 1);
+                function mouseover(d) {
+                    mapLabel.text(d.properties.name.slice(0, -5)) // remove suffix id from name
 
-        legend.append("stop")
-        .attr("offset", "33%")
-        .attr("stop-color", "#F07470")
-        .attr("stop-opacity", 1);
+                }
 
-        legend.append("stop")
-        .attr("offset", "66%")
-        .attr("stop-color", "#EA4C46")
-        .attr("stop-opacity", 1);
+                /* 
+                    Section to add circles to the Map 
 
-        legend.append("stop")
-        .attr("offset", "100%")
-        .attr("stop-color", "#DC1C13")
-        .attr("stop-opacity", 1);
+            
+                svg.selectAll("path")
+                    .data(fire)
+                    .enter()
+                    .append("circle")
+                    .attr("r", 3)
+                    .attr("transform", function(d) {
+                        return "translate(" + projection([d.Longitude, d.Latitude]) + ")";
+                    })
 
-        key.append("rect")
-        .attr("width", w)
-        .attr("height", h - 30)
-        .style("fill", "url(#gradient)")
-        .attr("transform", "translate(0,10)");
+                */
 
-        /* This needs newer version of the libraries)*/
-        var y = d3.scaleLinear()
-        .range([300, 0])
-        .domain([68, 12]);
 
-        var yAxis = d3.axisBottom()
-        .scale(y)
-        .ticks(5);
+                function mouseout(d) {
+                    mapLabel.text("") // remove out name
+                }
 
-        key.append("g")
-        .attr("class", "y axis")
-        .attr("transform", "translate(0,30)")
-        .call(yAxis)
-        .append("text")
-        .attr("transform", "rotate(-90)")
-        .attr("y", 0)
-        .attr("dy", ".71em")
-        .style("text-anchor", "end")
-        .text("axis title");
-        
-        /* END OF LEGEND 1 */
+                function clicked(d) {
+                    console.log(d.properties.id, d.properties.name) // verify everything looks good
+                        // Add code here
+                }
 
-        /* START OF LEGEND 2 - NOT WORKING */
-        var legendVals2 = ["< x incidents", "x - xx incidents", "xx - xxx incidents", "> xxx incidents"]
-        var color = ["#F1959B", "#F07470", "#EA4C46", "#DC1C13"]
+                /* LEGEND */
+                var w = 300,
+                    h = 50;
 
-        var legendVals1 = d3.scale.ordinal()
-            .domain(legendVals2)
-            .range(["#F1959B", "#F07470", "#EA4C46", "#DC1C13"]);
-        
-        var svgLegned3 = d3.select(".legend3").append("svg")
-            .attr("width", width).attr("height", height)
-        var legend3 = svgLegned3.selectAll('.legend3')
-            .data(legendVals1.domain())
-            .enter().append('g')
-            .attr("class", "legends3")
-            .attr("transform", function (d, i) { {return "translate(0," + i * 20 + ")"}
-        })
-        
-        legend3.append('rect')
-            .attr("x", 0)
-            .attr("y", 0)
-            .attr("width", 10)
-            .attr("height", 10)
-            .style("fill", function (d, i) {
-            return color(i)
-        })
-        
-        legend3.append('text')
-            .attr("x", 20)
-            .attr("y", 10)
-        //.attr("dy", ".35em")
-            .text(function (d, i) {return d})
-            .attr("class", "textselected")
-            .style("text-anchor", "start")
-            .style("font-size", 15)
+                var key = d3.select("#legend1")
+                    .append("svg")
+                    .attr("width", w)
+                    .attr("height", h);
+
+                var legend = key.append("defs")
+                    .append("svg:linearGradient")
+                    .attr("id", "gradient")
+                    .attr("x1", "0%")
+                    .attr("y1", "100%")
+                    .attr("x2", "100%")
+                    .attr("y2", "100%")
+                    .attr("spreadMethod", "pad");
+
+                legend.append("stop")
+                    .attr("offset", "0%")
+                    .attr("stop-color", "#F1959B")
+                    .attr("stop-opacity", 1);
+
+                legend.append("stop")
+                    .attr("offset", "33%")
+                    .attr("stop-color", "#F07470")
+                    .attr("stop-opacity", 1);
+
+                legend.append("stop")
+                    .attr("offset", "66%")
+                    .attr("stop-color", "#EA4C46")
+                    .attr("stop-opacity", 1);
+
+                legend.append("stop")
+                    .attr("offset", "100%")
+                    .attr("stop-color", "#DC1C13")
+                    .attr("stop-opacity", 1);
+
+                key.append("rect")
+                    .attr("width", w)
+                    .attr("height", h - 30)
+                    .style("fill", "url(#gradient)")
+                    .attr("transform", "translate(0,10)");
+
+                /* This needs newer version of the libraries)*/
+                var y = d3.scaleLinear()
+                    .range([300, 0])
+                    .domain([68, 12]);
+
+                var yAxis = d3.axisBottom()
+                    .scale(y)
+                    .ticks(5);
+
+                key.append("g")
+                    .attr("class", "y axis")
+                    .attr("transform", "translate(0,30)")
+                    .call(yAxis)
+                    .append("text")
+                    .attr("transform", "rotate(-90)")
+                    .attr("y", 0)
+                    .attr("dy", ".71em")
+                    .style("text-anchor", "end")
+                    .text("axis title");
+
+                /* END OF LEGEND 1 */
+
+                /* START OF LEGEND 2 - NOT WORKING */
+                var legendVals2 = ["< x incidents", "x - xx incidents", "xx - xxx incidents", "> xxx incidents"]
+                var color = ["#F1959B", "#F07470", "#EA4C46", "#DC1C13"]
+
+                var legendVals1 = d3.scale.ordinal()
+                    .domain(legendVals2)
+                    .range(["#F1959B", "#F07470", "#EA4C46", "#DC1C13"]);
+
+                var svgLegned3 = d3.select(".legend3").append("svg")
+                    .attr("width", width).attr("height", height)
+                var legend3 = svgLegned3.selectAll('.legend3')
+                    .data(legendVals1.domain())
+                    .enter().append('g')
+                    .attr("class", "legends3")
+                    .attr("transform", function(d, i) {
+                        {
+                            return "translate(0," + i * 20 + ")"
+                        }
+                    })
+
+                legend3.append('rect')
+                    .attr("x", 0)
+                    .attr("y", 0)
+                    .attr("width", 10)
+                    .attr("height", 10)
+                    .style("fill", function(d, i) {
+                        return color(i)
+                    })
+
+                legend3.append('text')
+                    .attr("x", 20)
+                    .attr("y", 10)
+                    //.attr("dy", ".35em")
+                    .text(function(d, i) {
+                        return d
+                    })
+                    .attr("class", "textselected")
+                    .style("text-anchor", "start")
+                    .style("font-size", 15)
+
+            });
+
 
         });
+    </script>
+</body>
 
-
-    </script> 
-    </body>
 </html>
