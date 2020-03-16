@@ -154,10 +154,10 @@
 
                 }
 
-                /* 
+                /*
                     Section to add circles to the Map 
+                */
 
-            
                 svg.selectAll("path")
                     .data(fire)
                     .enter()
@@ -167,7 +167,7 @@
                         return "translate(" + projection([d.Longitude, d.Latitude]) + ")";
                     })
 
-                */
+
 
 
                 function mouseout(d) {
