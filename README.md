@@ -17,9 +17,10 @@ We chose the Toronto Fire incidents data set for this project since we want to c
 
 ## Datasets
 
-- [Kaggle](https://www.kaggle.com/phyxle/toronto-fire-incidents) which is originally from [Toronto Open Data](https://open.toronto.ca/) provides list of fire incidents in Toronto
+- [Toronto Open Data](https://open.toronto.ca/dataset/fire-incidents/) provides list of fire incidents in Toronto
 - [Statistic Canada](https://www12.statcan.gc.ca/census-recensement/2016/dp-pd/prof/details/page.cfm?Lang=E&Geo1=CSD&Code1=3520005&Geo2=PR&Code2=35&SearchText=&SearchType=Begins&SearchPR=01&B1=Income&TABID=1&type=0) for Toronto census data which provides population and demographic datasets
 - [Toronto Map - JSON](https://github.com/jasonicarter/toronto-geojson)
+- [Toronto Fire Station](https://www.toronto.ca/community-people/public-safety-alerts/understanding-emergency-services/fire-station-locations/)
 
 
 ## Author
