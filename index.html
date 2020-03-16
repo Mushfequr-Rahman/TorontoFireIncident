@@ -24,21 +24,18 @@
             mapHeight = 550;
 
         var c10 = d3.scale.category10();
-        /* In newer version
-        d3.scaleOrdinal(d3.schemeCategory10);
-        */
+        // In newer version
+        // d3.scaleOrdinal(d3.schemeCategory10);
+        
 
         var projection = d3.geo.albers();
-        /* In newer version
-        var projection = d3.geoAlbers();
-        */
+        // In newer version
+        // var projection = d3.geoAlbers();
+        
 
-        var path = d3.geo.path()
-            .projection(projection);
-        /* In newer version -- NO ERROR BUT NOT WORKING
-        var path = d3.geoPath()
-            .projection(projection);
-        */
+        var path = d3.geo.path().projection(projection);
+        // In newer version -- NO ERROR BUT NOT WORKING
+        //var path = d3.geoPath().projection(projection);
 
         var svg = d3.select(".wrapper").append("svg")
             .attr("width", mapWidth)
@@ -50,11 +47,13 @@
             .attr("class", "map_neighbourhood_name")
 
         // load TopoJSON file
-        d3.json("toronto_topo.json", function(error, toronto) {
+        d3.json("data/toronto_topo.json", function(error, toronto) {
             if (error) throw error;
             // Load Toronto Fire Dataset here: 
-            d3.json("Fire_Incidents_Data.json", function(error, fire) {
+            d3.json("data/Fire_Incidents_Data.json", function(error, fire) {
+                d3.json("data/toronto_fire_stations.json", function(error, station) {
                 console.log("Fire Dataset: ", fire)
+                console.log("Stations: ", station)
                     /*
                     Fire Dataset attributes: 
                     Smoke_Alarm_at_Fire_Orgin_Alaram Failure: Mostly null 
@@ -165,18 +164,27 @@
                     .attr("r", 3)
                     .attr("transform", function(d) {
                         return "translate(" + projection([d.Longitude, d.Latitude]) + ")";
-                    })
+                })
 
-
-
+                // To add fire stations -- NOT WORKING
+                /*svg.selectAll("path")
+                    .data(station)
+                    .enter()
+                    .append("circle")
+                    .attr("fill", "#fff")
+                    .attr("r", 5)
+                    .attr("transform", function(d) {
+                        console.log(d);
+                        return "translate(" + projection([d.lon, d.lat]) + ")";
+                })*/
 
                 function mouseout(d) {
                     mapLabel.text("") // remove out name
                 }
 
                 function clicked(d) {
-                    console.log(d.properties.id, d.properties.name) // verify everything looks good
-                        // Add code here
+                    // console.log(d.properties.id, d.properties.name) // verify everything looks good
+                    // Add code here
                 }
 
                 /* LEGEND */
@@ -197,24 +205,29 @@
                     .attr("y2", "100%")
                     .attr("spreadMethod", "pad");
 
+                // Colour scale from lighter colour to darker colour
                 legend.append("stop")
                     .attr("offset", "0%")
-                    .attr("stop-color", "#F1959B")
+                    //.attr("stop-color", "#F1959B") // Red
+                    .attr("stop-color", "#1E90FF")
                     .attr("stop-opacity", 1);
 
                 legend.append("stop")
                     .attr("offset", "33%")
-                    .attr("stop-color", "#F07470")
+                    //.attr("stop-color", "#F07470") // Red
+                    .attr("stop-color", "#126AD2")
                     .attr("stop-opacity", 1);
 
                 legend.append("stop")
                     .attr("offset", "66%")
-                    .attr("stop-color", "#EA4C46")
+                    //.attr("stop-color", "#EA4C46") // Red
+                    .attr("stop-color", "#0C56BC")
                     .attr("stop-opacity", 1);
 
                 legend.append("stop")
                     .attr("offset", "100%")
-                    .attr("stop-color", "#DC1C13")
+                    //.attr("stop-color", "#DC1C13") // Red
+                    .attr("stop-color", "#00308F")
                     .attr("stop-opacity", 1);
 
                 key.append("rect")
@@ -245,8 +258,8 @@
 
                 /* END OF LEGEND 1 */
 
-                /* START OF LEGEND 2 - NOT WORKING */
-                var legendVals2 = ["< x incidents", "x - xx incidents", "xx - xxx incidents", "> xxx incidents"]
+                /* START OF LEGEND 2 (Box styles) - NOT WORKING */
+                /*var legendVals2 = ["< x incidents", "x - xx incidents", "xx - xxx incidents", "> xxx incidents"]
                 var color = ["#F1959B", "#F07470", "#EA4C46", "#DC1C13"]
 
                 var legendVals1 = d3.scale.ordinal()
@@ -283,10 +296,10 @@
                     })
                     .attr("class", "textselected")
                     .style("text-anchor", "start")
-                    .style("font-size", 15)
+                    .style("font-size", 15)*/
 
             });
-
+        });
 
         });
     </script>

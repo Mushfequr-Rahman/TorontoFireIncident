@@ -1,6 +1,6 @@
 # Toronto Fire Incident
 
-![demo](./images/latest_demo.gif)
+![demo](./images/latest-output.png)
 
 ## Background
 
