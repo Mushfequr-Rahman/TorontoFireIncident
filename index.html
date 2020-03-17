@@ -63,9 +63,9 @@
             d3.json("data/Fire_Incidents_Data.json", function(error, fire) {
                 d3.json("data/toronto_fire_stations.json", function(error, station) {
 
-                    console.log("Stations: ", station)
-                        //fire = fire.filter((d, i) => i % 10 == 0);
-                    console.log("Fire Dataset: ", fire)
+                    // console.log("Stations: ", station)
+                    //fire = fire.filter((d, i) => i % 10 == 0);
+                    // console.log("Fire Dataset: ", fire)
 
                     /*
                     Fire Dataset attributes: 
@@ -170,6 +170,7 @@
                             //console.log("Data", list[i])
                             //console.log('color: ', colorScale(list[i]))
                             return colorScale(list[i]);
+                            // return "skyblue"
                         })
                         .on("mouseover", mouseover)
                         .on("mouseout", mouseout)
@@ -199,44 +200,60 @@
                     console.log("Fire Longitude:", fire[0].Longitude)
                     console.log("Fire Latitude:", fire[0].Latitude)
 
-                    /*
-                    svg.selectAll("path")
-                        .data(fire)
-                        .enter()
-                        .append("circle")
-                        .attr("r", 3)
-                        .attr("transform", function(d) {
-                            //console.log("translate(" + projection([d.Longitude, d.Latitude]) + ")")
-                            return "translate(" + projection([d.Longitude, d.Latitude]) + ")";
-                        })
+                    // console.log("Line 203:", svg.selectAll("path").data(fire).append("circle").attr("r", 5))
+                    // svg.selectAll("path")
+                    //     .data(fire)
+                    //     .enter()
+                    //     .append("circle")
+                    //     .attr("r", 3)
+                    //     .attr("transform", function(d) {
+                    //         //console.log("translate(" + projection([d.Longitude, d.Latitude]) + ")")
+                    //         return "translate(" + projection([d.Longitude, d.Latitude]) + ")";
+                    //     })
 
-                    */
 
                     console.log("Station: ", station[0].station)
                     console.log("Station Longitude", station[0].lon)
                     console.log("Station Latitude", station[0].lat)
 
                     // To add fire stations -- NOT WORKING
+                    // console.log("Line 220:", svg.selectAll("path").data(station).append("circle").attr("r", 3))
 
+                    // for (i of station) {
+                    //     svg.selectAll("path")
+                    //         .append("circle")
+                    //         .attr("fill", "yellow")
+                    //         .attr("r", 5)
+                    //         .attr("transform", () => `translate(${projection([i.lon, i.lat])})`
+                    //             // function() {
+                    //             //     //console.log("[Inside loop]Station: ", station[i].lon)
+                    //             //     //console.log("[Inside loop] Station Longitude", station[i].lat)
+                    //             //     //console.log("translate(" + projection([station[i].lon, station[i].lat]) + ")")
+                    //             //     return "translate(" + projection([station[i].lon, station[i].lat]) + ")";
+                    //         )
+                    // }
 
-                    for (i in station) {
-                        svg.selectAll("path")
-                            .append("circle")
-                            .attr("fill", "#fff")
-                            .attr("r", 5)
-                            .attr("transform", function() {
-                                //console.log("[Inside loop]Station: ", station[i].lon)
-                                //console.log("[Inside loop] Station Longitude", station[i].lat)
-                                //console.log("translate(" + projection([station[i].lon, station[i].lat]) + ")")
-                                return "translate(" + projection([station[i].lon, station[i].lat]) + ")";
-                            })
-                    }
-                    svg.selectAll("path")
+                    //svg.selectAll("path")
+                    //     .data(fire)
+                    //     .enter()
+                    //     .append("circle")
+                    //     .attr("r", 3)
+                    //     .attr("transform", function(d) {
+                    //         //console.log("translate(" + projection([d.Longitude, d.Latitude]) + ")")
+                    //         // console.log(projection([d.Longitude, d.Latitude]));
+                    //         return "translate(" + projection([d.Longitude, d.Latitude]) + ")";
+                    //     })
+
+                    svg.selectAll('circle')
                         .data(station)
                         .enter()
                         .append("circle")
-                        .attr("fill", "#fff")
+                        .attr("fill", "red")
                         .attr("r", 5)
+                        .attr("transform", function(d) {
+                            console.log(projection([d.lon, d.lat]));
+                            return `translate(${projection([d.lon, d.lat])})`;
+                        })
 
                     /* Debug Mode End */
                     function mouseout(d) {
