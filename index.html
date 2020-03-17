@@ -8,6 +8,16 @@
 <body>
     <script src="http://d3js.org/d3.v3.min.js"></script>
     <script src="http://d3js.org/topojson.v1.min.js"></script>
+    <script src="https://d3js.org/d3-array.v1.min.js"></script>
+    <script src="https://d3js.org/d3-geo.v1.min.js"></script>
+    <script src="https://d3js.org/d3-array.v2.min.js"></script>
+    <script src="https://d3js.org/d3-color.v1.min.js"></script>
+    <script src="https://d3js.org/d3-format.v1.min.js"></script>
+    <script src="https://d3js.org/d3-interpolate.v1.min.js"></script>
+    <script src="https://d3js.org/d3-time.v1.min.js"></script>
+    <script src="https://d3js.org/d3-time-format.v2.min.js"></script>
+    <script src="https://d3js.org/d3-scale.v3.min.js"></script>
+    <script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
     <!--Newer version of the libraries, still conflicting syntax with the base code-->
     <!--<script src="https://d3js.org/d3.v5.min.js"></script>
     <script src="https://d3js.org/topojson.v2.min.js"></script>-->
@@ -52,54 +62,57 @@
             // Load Toronto Fire Dataset here: 
             d3.json("data/Fire_Incidents_Data.json", function(error, fire) {
                 d3.json("data/toronto_fire_stations.json", function(error, station) {
-                    console.log("Fire Dataset: ", fire)
+
                     console.log("Stations: ", station)
-                        /*
-                        Fire Dataset attributes: 
-                        Smoke_Alarm_at_Fire_Orgin_Alaram Failure: Mostly null 
-                        Count_of_Persons_Rescued: 0
-                        TFS_Arrival_Time: "2015-08-29T11:52:19"
-                        Incident_Station_Area: 412
-                        Building_Status: null
-                        Smoke_Alarm_at_Fire_Origin_Alarm_Type: null
-                        Level_Of_Origin: null
-                        Latitude: 43.72274
-                        Exposures: null
-                        Ignition_Source: "81 - Vehicle - Electrical"
-                        Property_Use: "850 - Parking Lot Kiosk"
-                        Status_of_Fire_On_Arrival: "3 - Fire with smoke showing only - including vehicle, outdoor fires"
-                        Civilian_Casualties: 0
-                        Sprinkler_System_Presence: null
-                        Smoke_Alarm_Impact_on_Persons_Evacuating_Impact_on_Evacuation: null
-                        Method_Of_Fire_Control: "1 - Extinguished by fire department"
-                        Incident_Ward: 2
-                        Business_Impact: null
-                        Number_of_responding_apparatus: 1
-                        Intersection: "Highway 27 S / Queen's Plate Dr"
-                        Fire_Alarm_System_Operation: null
-                        Sprinkler_System_Operation: null
-                        Fire_Alarm_System_Impact_on_Evacuation: null
-                        Fire_Under_Control_Time: "2015-08-29T12:13:53"
-                        Estimated_Dollar_Loss: 1000
-                        Estimated_Number_Of_Persons_Displaced: null
-                        Final_Incident_Type: "01 - Fire"
-                        Area_of_Origin: "81 - Engine Area"
-                        Longitude: -79.59822
-                        TFS_Firefighter_Casualties: 0
-                        Smoke_Alarm_at_Fire_Origin: null
-                        Material_First_Ignited: "16 - Insulation"
-                        Fire_Alarm_System_Presence: null
-                        _id: 441424
-                        Extent_Of_Fire: null
-                        Number_of_responding_personnel: 4
-                        Possible_Cause: "51 - Mechanical Failure"
-                        Last_TFS_Unit_Clear_Time: "2015-08-29T12:40:36"
-                        Initial_CAD_Event_Type: "VEF"
-                        Smoke_Spread: null
-                        TFS_Alarm_Time: "2015-08-29T11:52:04"
-                        Incident_Number: "F15080769"
-                        Ext_agent_app_or_defer_time: "2015-08-29T11:52:31"
-                        */
+                        //fire = fire.filter((d, i) => i % 10 == 0);
+                    console.log("Fire Dataset: ", fire)
+
+                    /*
+                    Fire Dataset attributes: 
+                    Smoke_Alarm_at_Fire_Orgin_Alaram Failure: Mostly null 
+                    Count_of_Persons_Rescued: 0
+                    TFS_Arrival_Time: "2015-08-29T11:52:19"
+                    Incident_Station_Area: 412
+                    Building_Status: null
+                    Smoke_Alarm_at_Fire_Origin_Alarm_Type: null
+                    Level_Of_Origin: null
+                    Latitude: 43.72274
+                    Exposures: null
+                    Ignition_Source: "81 - Vehicle - Electrical"
+                    Property_Use: "850 - Parking Lot Kiosk"
+                    Status_of_Fire_On_Arrival: "3 - Fire with smoke showing only - including vehicle, outdoor fires"
+                    Civilian_Casualties: 0
+                    Sprinkler_System_Presence: null
+                    Smoke_Alarm_Impact_on_Persons_Evacuating_Impact_on_Evacuation: null
+                    Method_Of_Fire_Control: "1 - Extinguished by fire department"
+                    Incident_Ward: 2
+                    Business_Impact: null
+                    Number_of_responding_apparatus: 1
+                    Intersection: "Highway 27 S / Queen's Plate Dr"
+                    Fire_Alarm_System_Operation: null
+                    Sprinkler_System_Operation: null
+                    Fire_Alarm_System_Impact_on_Evacuation: null
+                    Fire_Under_Control_Time: "2015-08-29T12:13:53"
+                    Estimated_Dollar_Loss: 1000
+                    Estimated_Number_Of_Persons_Displaced: null
+                    Final_Incident_Type: "01 - Fire"
+                    Area_of_Origin: "81 - Engine Area"
+                    Longitude: -79.59822
+                    TFS_Firefighter_Casualties: 0
+                    Smoke_Alarm_at_Fire_Origin: null
+                    Material_First_Ignited: "16 - Insulation"
+                    Fire_Alarm_System_Presence: null
+                    _id: 441424
+                    Extent_Of_Fire: null
+                    Number_of_responding_personnel: 4
+                    Possible_Cause: "51 - Mechanical Failure"
+                    Last_TFS_Unit_Clear_Time: "2015-08-29T12:40:36"
+                    Initial_CAD_Event_Type: "VEF"
+                    Smoke_Spread: null
+                    TFS_Alarm_Time: "2015-08-29T11:52:04"
+                    Incident_Number: "F15080769"
+                    Ext_agent_app_or_defer_time: "2015-08-29T11:52:31"
+                    */
 
                     // TODO: Map the fire incidents as little circles on to the map. 
 
@@ -109,11 +122,6 @@
                     var neighbourhoods = topojson.feature(toronto, toronto.objects.toronto);
 
 
-                    /*
-                    var cScale = d3.scaleThreshold()
-                        .domain([10, 100, 1000, 10000, 100000])
-                        .range(d3.schemeReds[5]);
-                    */
 
                     // set default projection values 
                     projection
@@ -130,12 +138,39 @@
                         .scale(s)
                         .translate(t);
 
+                    //Section for color scale:
+                    var colorScale = d3.scaleThreshold()
+                        .domain([0, 2, 10, 50, 100, 150, 200, 300])
+                        .range(d3.schemeBlues[9]);
+
+                    var list = [];
+                    neighbourhoods.features.forEach(function(d) {
+                        var dict = {}
+                        dict[d] = 0;
+                        for (var i in fire) {
+                            if (d3.geoContains(d, [fire[i].Longitude, fire[i].Latitude])) {
+                                dict[d] += 1
+                            }
+
+                        }
+                        list.push(dict[d])
+
+
+                    });
+
+
+
                     // get individual neighbourhoods
                     svg.selectAll("path")
                         .data(neighbourhoods.features)
                         .enter().append("path")
                         .attr("class", "map_neighbourhood")
                         .attr("d", path)
+                        .attr("fill", function(d, i) {
+                            //console.log("Data", list[i])
+                            //console.log('color: ', colorScale(list[i]))
+                            return colorScale(list[i]);
+                        })
                         .on("mouseover", mouseover)
                         .on("mouseout", mouseout)
                         .on("click", clicked)
@@ -153,6 +188,8 @@
 
                     }
 
+
+
                     /*
                         Section to add circles to the Map 
                     */
@@ -162,18 +199,18 @@
                     console.log("Fire Longitude:", fire[0].Longitude)
                     console.log("Fire Latitude:", fire[0].Latitude)
 
-
+                    /*
                     svg.selectAll("path")
                         .data(fire)
                         .enter()
                         .append("circle")
                         .attr("r", 3)
                         .attr("transform", function(d) {
-                            console.log("translate(" + projection([d.Longitude, d.Latitude]) + ")")
+                            //console.log("translate(" + projection([d.Longitude, d.Latitude]) + ")")
                             return "translate(" + projection([d.Longitude, d.Latitude]) + ")";
                         })
 
-
+                    */
 
                     console.log("Station: ", station[0].station)
                     console.log("Station Longitude", station[0].lon)
@@ -188,9 +225,9 @@
                             .attr("fill", "#fff")
                             .attr("r", 5)
                             .attr("transform", function() {
-                                console.log("[Inside loop]Station: ", station[i].lon)
-                                console.log("[Inside loop] Station Longitude", station[i].lat)
-                                console.log("translate(" + projection([station[i].lon, station[i].lat]) + ")")
+                                //console.log("[Inside loop]Station: ", station[i].lon)
+                                //console.log("[Inside loop] Station Longitude", station[i].lat)
+                                //console.log("translate(" + projection([station[i].lon, station[i].lat]) + ")")
                                 return "translate(" + projection([station[i].lon, station[i].lat]) + ")";
                             })
                     }
@@ -233,25 +270,25 @@
                     legend.append("stop")
                         .attr("offset", "0%")
                         //.attr("stop-color", "#F1959B") // Red
-                        .attr("stop-color", "#1E90FF")
+                        .attr("stop-color", colorScale(0))
                         .attr("stop-opacity", 1);
 
                     legend.append("stop")
                         .attr("offset", "33%")
                         //.attr("stop-color", "#F07470") // Red
-                        .attr("stop-color", "#126AD2")
+                        .attr("stop-color", colorScale(10))
                         .attr("stop-opacity", 1);
 
                     legend.append("stop")
                         .attr("offset", "66%")
                         //.attr("stop-color", "#EA4C46") // Red
-                        .attr("stop-color", "#0C56BC")
+                        .attr("stop-color", colorScale(50))
                         .attr("stop-opacity", 1);
 
                     legend.append("stop")
                         .attr("offset", "100%")
                         //.attr("stop-color", "#DC1C13") // Red
-                        .attr("stop-color", "#00308F")
+                        .attr("stop-color", colorScale(200))
                         .attr("stop-opacity", 1);
 
                     key.append("rect")
