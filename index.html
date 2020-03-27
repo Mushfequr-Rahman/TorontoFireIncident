@@ -243,17 +243,36 @@
                     //         // console.log(projection([d.Longitude, d.Latitude]));
                     //         return "translate(" + projection([d.Longitude, d.Latitude]) + ")";
                     //     })
+                    // var img = g.append("svg:image")
+                    //     .attr("xlink:href", "http://www.clker.com/cliparts/1/4/5/a/1331068897296558865Sitting%20Racoon.svg")
+                    //     .attr("width", 200)
+                    //     .attr("height", 200)
+                    //     .attr("x", 228)
+                    //     .attr("y", 53);
 
-                    svg.selectAll('circle')
+                    svg.selectAll('image')
                         .data(station)
                         .enter()
-                        .append("circle")
-                        .attr("fill", "red")
-                        .attr("r", 5)
+                        .append("image")
+                        .attr("xlink:href", 'images/fire_extinguisher.png')
+                        .attr("width", 12)
+                        // .attr("fill", "red")
+                        // .attr("r", 5)
                         .attr("transform", function(d) {
                             console.log(projection([d.lon, d.lat]));
-                            return `translate(${projection([d.lon, d.lat])})`;
+                            return `translate(${projection([d.lon, d.lat+0.005])})`;
                         })
+
+                    // svg.selectAll('circle')
+                    //     .data(station)
+                    //     .enter()
+                    //     .append("circle")
+                    //     .attr("fill", "red")
+                    //     .attr("r", 5)
+                    //     .attr("transform", function(d) {
+                    //         console.log(projection([d.lon, d.lat]));
+                    //         return `translate(${projection([d.lon, d.lat])})`;
+                    //     })
 
                     /* Debug Mode End */
                     function mouseout(d) {
