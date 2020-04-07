@@ -1,3 +1,8 @@
+body {
+    color: white;
+    background-color: #2e2e2e;
+}
+
 .wrapper {
     margin-left: auto;
     margin-right: auto;
@@ -27,4 +32,18 @@
 .map_neighbourhood:hover {
     fill: #636363;
     cursor: pointer;
+}
+
+div.tooltip { 
+    position: absolute;     
+    text-align: center;     
+    width: 200px;          
+    height: 100px;         
+    padding: 2px;       
+    font: 12px sans-serif;    
+    background: #fff; 
+    border: 0px;        
+    pointer-events: none;  
+    color: #000;   
+    border-radius: 6px;
 }

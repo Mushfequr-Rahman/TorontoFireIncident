@@ -18,6 +18,7 @@
     <script src="https://d3js.org/d3-time-format.v2.min.js"></script>
     <script src="https://d3js.org/d3-scale.v3.min.js"></script>
     <script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
+    <script src="https://d3js.org/d3-brush.v1.min.js"></script>
     <!--Newer version of the libraries, still conflicting syntax with the base code-->
     <!--<script src="https://d3js.org/d3.v5.min.js"></script>
     <script src="https://d3js.org/topojson.v2.min.js"></script>-->
@@ -26,12 +27,42 @@
     <div class="wrapper">
         <!--Gradient Legend-->
         <div id="legend1"></div>
-        <!--Vertical box legend-->
-        <div class="legend2"></div>
+        <div>
+            Cause of Fire incidents:<br>
+            <input type="checkbox" checked name="cause" value="Undetermined"><label>Undetermined</label><br>
+            <input type="checkbox" checked name="cause" value="Electrical Failure"><label>Electrical Failure</label><br>
+            <input type="checkbox" checked name="cause" value="Improperly Discarded"><label>Improperly
+                Discarded</label><br>
+            <input type="checkbox" checked name="cause" value="Unattended"><label>Unattended</label><br>
+            <input type="checkbox" checked name="cause" value="Other unintentional cause"><label>Other unintentional
+                cause</label><br>
+        </div>
+        <!--Potential source: http://bl.ocks.org/timelyportfolio/5c136de85de1c2abb6fc-->
+        <div id="date_filter"></div>
     </div>
     <script>
-        var mapWidth = 550,
-            mapHeight = 550;
+        /*
+        // Needs an update function for the checkboxes
+            choices = []
+            d3.selectAll("input[name='cause']").on("change", function () {
+                //var choices = [];
+                d3.selectAll("input[name='cause']:checked").each(function (d) {
+                    var cb = d3.select(this);
+                    if (cb.property("checked")) {
+                        choices.push(cb.property("value"));
+                    }
+                });
+            });
+
+            fire = fire.filter(function (d, i) {
+                if (choices.length > 0) return d.Possible_Cause.includes(choices)
+                else return null;
+            })
+        */
+        
+        
+        var mapWidth = 750,
+            mapHeight = 750;
 
         var c10 = d3.scale.category10();
         // In newer version
@@ -56,12 +87,13 @@
             .attr("x", 0)
             .attr("class", "map_neighbourhood_name")
 
+         
         // load TopoJSON file
-        d3.json("data/toronto_topo.json", function(error, toronto) {
+        d3.json("data/toronto_topo.json", function (error, toronto) {
             if (error) throw error;
             // Load Toronto Fire Dataset here: 
-            d3.json("data/Fire_Incidents_Data.json", function(error, fire) {
-                d3.json("data/toronto_fire_stations.json", function(error, station) {
+            d3.json("data/Fire_Incidents_Data.json", function (error, fire) {
+                d3.json("data/toronto_fire_stations.json", function (error, station) {
 
                     // console.log("Stations: ", station)
                     //fire = fire.filter((d, i) => i % 10 == 0);
@@ -116,9 +148,6 @@
 
                     // TODO: Map the fire incidents as little circles on to the map. 
 
-
-
-
                     var neighbourhoods = topojson.feature(toronto, toronto.objects.toronto);
 
 
@@ -141,24 +170,19 @@
                     //Section for color scale:
                     var colorScale = d3.scaleThreshold()
                         .domain([0, 2, 10, 50, 100, 150, 200, 300])
-                        .range(d3.schemeBlues[9]);
+                        .range(d3.schemeReds[9]);
 
                     var list = [];
-                    neighbourhoods.features.forEach(function(d) {
+                    neighbourhoods.features.forEach(function (d) {
                         var dict = {}
                         dict[d] = 0;
                         for (var i in fire) {
                             if (d3.geoContains(d, [fire[i].Longitude, fire[i].Latitude])) {
                                 dict[d] += 1
                             }
-
                         }
                         list.push(dict[d])
-
-
                     });
-
-
 
                     // get individual neighbourhoods
                     svg.selectAll("path")
@@ -166,11 +190,10 @@
                         .enter().append("path")
                         .attr("class", "map_neighbourhood")
                         .attr("d", path)
-                        .attr("fill", function(d, i) {
+                        .attr("fill", function (d, i) {
                             //console.log("Data", list[i])
                             //console.log('color: ', colorScale(list[i]))
                             return colorScale(list[i]);
-                            // return "skyblue"
                         })
                         .on("mouseover", mouseover)
                         .on("mouseout", mouseout)
@@ -178,77 +201,38 @@
 
                     // add the mesh/path between neighbourhoods
                     svg.append("path")
-                        .datum(topojson.mesh(toronto, toronto.objects.toronto, function(a, b) {
+                        .datum(topojson.mesh(toronto, toronto.objects.toronto, function (a, b) {
                             return a !== b;
                         }))
                         .attr("class", "map_mesh")
                         .attr("d", path);
 
+                    // Source: https://bl.ocks.org/tiffylou/88f58da4599c9b95232f5c89a6321992
+                    var tooltip = d3.select("body").append("div") 
+                                .attr("class", "tooltip")       
+                                .style("opacity", 0);
+
+                    // Potential source fix: https://jarrettmeyer.com/2018/06/05/svg-multiline-text-with-tspan
                     function mouseover(d) {
-                        mapLabel.text(d.properties.name.slice(0, -5)) // remove suffix id from name
-
+                        tooltip.transition()    
+                        .duration(200)    
+                        .style("opacity", .9);    
+                        tooltip.html("Intersection Name: " + d.properties.name.slice(0, -5) + 
+                        "<br> Total Incidents:" + "<br> Average Waiting Time:")  
+                        .style("left", (d3.event.pageX) + "px")   
+                        .style("top", (d3.event.pageY - 28) + "px");
                     }
-
-
 
                     /*
                         Section to add circles to the Map 
                     */
 
-                    /* TODO: DEBUG HERE */
-
                     console.log("Fire Longitude:", fire[0].Longitude)
                     console.log("Fire Latitude:", fire[0].Latitude)
-
-                    // console.log("Line 203:", svg.selectAll("path").data(fire).append("circle").attr("r", 5))
-                    // svg.selectAll("path")
-                    //     .data(fire)
-                    //     .enter()
-                    //     .append("circle")
-                    //     .attr("r", 3)
-                    //     .attr("transform", function(d) {
-                    //         //console.log("translate(" + projection([d.Longitude, d.Latitude]) + ")")
-                    //         return "translate(" + projection([d.Longitude, d.Latitude]) + ")";
-                    //     })
-
-
                     console.log("Station: ", station[0].station)
                     console.log("Station Longitude", station[0].lon)
                     console.log("Station Latitude", station[0].lat)
 
-                    // To add fire stations -- NOT WORKING
-                    // console.log("Line 220:", svg.selectAll("path").data(station).append("circle").attr("r", 3))
-
-                    // for (i of station) {
-                    //     svg.selectAll("path")
-                    //         .append("circle")
-                    //         .attr("fill", "yellow")
-                    //         .attr("r", 5)
-                    //         .attr("transform", () => `translate(${projection([i.lon, i.lat])})`
-                    //             // function() {
-                    //             //     //console.log("[Inside loop]Station: ", station[i].lon)
-                    //             //     //console.log("[Inside loop] Station Longitude", station[i].lat)
-                    //             //     //console.log("translate(" + projection([station[i].lon, station[i].lat]) + ")")
-                    //             //     return "translate(" + projection([station[i].lon, station[i].lat]) + ")";
-                    //         )
-                    // }
-
-                    //svg.selectAll("path")
-                    //     .data(fire)
-                    //     .enter()
-                    //     .append("circle")
-                    //     .attr("r", 3)
-                    //     .attr("transform", function(d) {
-                    //         //console.log("translate(" + projection([d.Longitude, d.Latitude]) + ")")
-                    //         // console.log(projection([d.Longitude, d.Latitude]));
-                    //         return "translate(" + projection([d.Longitude, d.Latitude]) + ")";
-                    //     })
-                    // var img = g.append("svg:image")
-                    //     .attr("xlink:href", "http://www.clker.com/cliparts/1/4/5/a/1331068897296558865Sitting%20Racoon.svg")
-                    //     .attr("width", 200)
-                    //     .attr("height", 200)
-                    //     .attr("x", 228)
-                    //     .attr("y", 53);
 
                     svg.selectAll('image')
                         .data(station)
@@ -258,9 +242,9 @@
                         .attr("width", 12)
                         // .attr("fill", "red")
                         // .attr("r", 5)
-                        .attr("transform", function(d) {
-                            console.log(projection([d.lon, d.lat]));
-                            return `translate(${projection([d.lon, d.lat+0.005])})`;
+                        .attr("transform", function (d) {
+                            //console.log(projection([d.lon, d.lat]));
+                            return `translate(${projection([d.lon, d.lat + 0.005])})`;
                         })
 
                     // svg.selectAll('circle')
@@ -276,7 +260,9 @@
 
                     /* Debug Mode End */
                     function mouseout(d) {
-                        mapLabel.text("") // remove out name
+                        tooltip.transition()    
+                        .duration(500)    
+                        .style("opacity", 0); 
                     }
 
                     function clicked(d) {
@@ -285,53 +271,33 @@
                     }
 
                     /* LEGEND */
-                    var w = 300,
-                        h = 50;
+                    // TO DO: Needs to fix the range of incident label
+                    var legendRectSize = 18;                                  
+                    var legendSpacing = 4;
+                    var legend = svg.selectAll('#legend1')                     
+                        .data(colorScale.domain())                                   
+                        .enter()                                                
+                        .append('g')                                            
+                        .attr('class', 'legend')                                
+                        .attr('transform', function (d, i) {                     
+                            var height = legendRectSize + legendSpacing;          
+                            var offset = height * colorScale.domain().length / 2;     
+                            var horz = -2 * legendRectSize + 100;                      
+                            var vert = i * height - offset + 200;                      
+                            return 'translate(' + horz + ',' + vert + ')';        
+                        });                                                     
 
-                    var key = d3.select("#legend1")
-                        .append("svg")
-                        .attr("width", w)
-                        .attr("height", h);
+                    legend.append('rect')                                     
+                        .attr('width', legendRectSize)                          
+                        .attr('height', legendRectSize)                        
+                        .style('fill', colorScale)                                   
+                        .style('stroke', colorScale);                                
 
-                    var legend = key.append("defs")
-                        .append("svg:linearGradient")
-                        .attr("id", "gradient")
-                        .attr("x1", "0%")
-                        .attr("y1", "100%")
-                        .attr("x2", "100%")
-                        .attr("y2", "100%")
-                        .attr("spreadMethod", "pad");
-
-                    // Colour scale from lighter colour to darker colour
-                    legend.append("stop")
-                        .attr("offset", "0%")
-                        //.attr("stop-color", "#F1959B") // Red
-                        .attr("stop-color", colorScale(0))
-                        .attr("stop-opacity", 1);
-
-                    legend.append("stop")
-                        .attr("offset", "33%")
-                        //.attr("stop-color", "#F07470") // Red
-                        .attr("stop-color", colorScale(10))
-                        .attr("stop-opacity", 1);
-
-                    legend.append("stop")
-                        .attr("offset", "66%")
-                        //.attr("stop-color", "#EA4C46") // Red
-                        .attr("stop-color", colorScale(50))
-                        .attr("stop-opacity", 1);
-
-                    legend.append("stop")
-                        .attr("offset", "100%")
-                        //.attr("stop-color", "#DC1C13") // Red
-                        .attr("stop-color", colorScale(200))
-                        .attr("stop-opacity", 1);
-
-                    key.append("rect")
-                        .attr("width", w)
-                        .attr("height", h - 30)
-                        .style("fill", "url(#gradient)")
-                        .attr("transform", "translate(0,10)");
+                    legend.append('text')                                     
+                        .attr('x', legendRectSize + legendSpacing)              
+                        .attr('y', legendRectSize - legendSpacing)              
+                        .style('fill', 'white')
+                        .text(function (d) { return d; });
 
                     /* This needs newer version of the libraries)*/
                     var y = d3.scaleLinear()
@@ -352,48 +318,6 @@
                         .attr("dy", ".71em")
                         .style("text-anchor", "end")
                         .text("axis title");
-
-                    /* END OF LEGEND 1 */
-
-                    /* START OF LEGEND 2 (Box styles) - NOT WORKING */
-                    /*var legendVals2 = ["< x incidents", "x - xx incidents", "xx - xxx incidents", "> xxx incidents"]
-                    var color = ["#F1959B", "#F07470", "#EA4C46", "#DC1C13"]
-
-                    var legendVals1 = d3.scale.ordinal()
-                        .domain(legendVals2)
-                        .range(["#F1959B", "#F07470", "#EA4C46", "#DC1C13"]);
-
-                    var svgLegned3 = d3.select(".legend3").append("svg")
-                        .attr("width", width).attr("height", height)
-                    var legend3 = svgLegned3.selectAll('.legend3')
-                        .data(legendVals1.domain())
-                        .enter().append('g')
-                        .attr("class", "legends3")
-                        .attr("transform", function(d, i) {
-                            {
-                                return "translate(0," + i * 20 + ")"
-                            }
-                        })
-
-                    legend3.append('rect')
-                        .attr("x", 0)
-                        .attr("y", 0)
-                        .attr("width", 10)
-                        .attr("height", 10)
-                        .style("fill", function(d, i) {
-                            return color(i)
-                        })
-
-                    legend3.append('text')
-                        .attr("x", 20)
-                        .attr("y", 10)
-                        //.attr("dy", ".35em")
-                        .text(function(d, i) {
-                            return d
-                        })
-                        .attr("class", "textselected")
-                        .style("text-anchor", "start")
-                        .style("font-size", 15)*/
 
                 });
             });
