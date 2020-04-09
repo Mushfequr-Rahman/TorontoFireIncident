@@ -61,7 +61,7 @@
                 d3.json("data/toronto_fire_stations.json", function(error, station) {
 
                     // console.log("Stations: ", station)
-                    //fire = fire.filter((d, i) => i % 100 == 0);
+                    fire = fire.filter((d, i) => i % 10 == 0);
                     og_data = fire
                         // console.log("Fire Dataset: ", fire)
                     var dateSelector = document.getElementById("date_filter")
@@ -69,10 +69,12 @@
                         $('#daterange').daterangepicker({
                             startDate: "01/01/2014",
                             endDate: "01/01/2020",
-                            opens: 'left',
-                            "linkedCalendars": false
+                            opens: 'right',
+                            linkedCalendars: false,
+                            alwaysShowCalendars: false,
 
                         }, function(start, end, label) {
+
                             console.log("A new date selection was made: " + start.format('YYYY-MM-DD') + ' to ' + end.format('YYYY-MM-DD'));
                             fire = og_data.filter(function(d, i) {
                                 date = new Date(d.TFS_Arrival_Time)
@@ -86,12 +88,7 @@
                         });
                     });
 
-                    dateSelector.addEventListener("change", function() {
-                        min_val = "2015-08-29"
-                        max_val = "2017-08-29"
 
-
-                    });
 
 
                     /*
@@ -290,8 +287,24 @@
                 tooltip.transition()
                     .duration(200)
                     .style("opacity", .9);
+                //Aggregarte data here: 
+
+                total_incidents = 0;
+                var total_time = 0;
+                for (var i in fire) {
+                    if (d3.geoContains(d, [fire[i].Longitude, fire[i].Latitude])) {
+                        total_incidents += 1
+                        arr_t = new Date(fire[i].TFS_Arrival_Time)
+                        alarm_t = new Date(fire[i].TFS_Alarm_Time)
+                        total_time += (arr_t - alarm_t) / (3600 * 24)
+
+                    }
+
+                }
+                var avg_wait_time = total_time / total_incidents
+
                 tooltip.html("Intersection Name: " + d.properties.name.slice(0, -5) +
-                        "<br> Total Incidents:" + "<br> Average Waiting Time:")
+                        "<br> Total Incidents:" + total_incidents + "<br> Average Waiting Time:" + avg_wait_time.toFixed(2))
                     .style("left", (d3.event.pageX) + "px")
                     .style("top", (d3.event.pageY - 28) + "px");
             }
@@ -363,25 +376,25 @@
                 .range([300, 0])
                 .domain([68, 12]);
 
-            /*
+
             var yAxis = d3.axisBottom()
                 .scale(y)
                 .ticks(5);
-            */
+
 
             console.log("Finisshed Drawing map")
-                /*
-                key.append("g")
-                    .attr("class", "y axis")
-                    .attr("transform", "translate(0,30)")
-                    .call(yAxis)
-                    .append("text")
-                    .attr("transform", "rotate(-90)")
-                    .attr("y", 0)
-                    .attr("dy", ".71em")
-                    .style("text-anchor", "end")
-                    .text("axis title");
-                */
+
+            key.append("g")
+                .attr("class", "y axis")
+                .attr("transform", "translate(0,30)")
+                .call(yAxis)
+                .append("text")
+                .attr("transform", "rotate(-90)")
+                .attr("y", 0)
+                .attr("dy", ".71em")
+                .style("text-anchor", "end")
+                .text("axis title");
+
         }
     </script>
 </body>
