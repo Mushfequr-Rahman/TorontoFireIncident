@@ -1,5 +1,5 @@
 body {
-    color: white;
+    color: black;
     background-color: #2e2e2e;
 }
 
@@ -34,16 +34,29 @@ body {
     cursor: pointer;
 }
 
-div.tooltip { 
-    position: absolute;     
-    text-align: center;     
-    width: 200px;          
-    height: 100px;         
-    padding: 2px;       
-    font: 12px sans-serif;    
-    background: #fff; 
-    border: 0px;        
-    pointer-events: none;  
-    color: #000;   
+div.tooltip {
+    position: absolute;
+    text-align: center;
+    width: 200px;
+    height: 100px;
+    padding: 2px;
+    font: 12px sans-serif;
+    background: #fff;
+    border: 0px;
+    pointer-events: none;
+    color: #000;
     border-radius: 6px;
+}
+
+#date_filter {
+    color: black;
+}
+
+#cause_filter {
+    color: white;
+    margin-top: 0rem;
+    margin-left: 30rem;
+    position: absolute;
+    border: red;
+    border-radius: 2rem;
 }

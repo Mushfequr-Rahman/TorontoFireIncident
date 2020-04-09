@@ -19,6 +19,11 @@
     <script src="https://d3js.org/d3-scale.v3.min.js"></script>
     <script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
     <script src="https://d3js.org/d3-brush.v1.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
+
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
     <!--Newer version of the libraries, still conflicting syntax with the base code-->
     <!--<script src="https://d3js.org/d3.v5.min.js"></script>
     <script src="https://d3js.org/topojson.v2.min.js"></script>-->
@@ -27,7 +32,14 @@
     <div class="wrapper">
         <!--Gradient Legend-->
         <div id="legend1"></div>
-        <div>
+        <div id="date_filter">
+            <input type="text" id="daterange" />
+        </div>
+
+
+
+
+        <div id="cause_filter">
             Cause of Fire incidents:<br>
             <input type="checkbox" checked name="cause" value="Undetermined"><label>Undetermined</label><br>
             <input type="checkbox" checked name="cause" value="Electrical Failure"><label>Electrical Failure</label><br>
@@ -38,7 +50,7 @@
                 cause</label><br>
         </div>
         <!--Potential source: http://bl.ocks.org/timelyportfolio/5c136de85de1c2abb6fc-->
-        <div id="date_filter"></div>
+
     </div>
     <script>
         // load TopoJSON file
@@ -49,8 +61,38 @@
                 d3.json("data/toronto_fire_stations.json", function(error, station) {
 
                     // console.log("Stations: ", station)
-                    fire = fire.filter((d, i) => i % 10 == 0);
-                    // console.log("Fire Dataset: ", fire)
+                    //fire = fire.filter((d, i) => i % 100 == 0);
+                    og_data = fire
+                        // console.log("Fire Dataset: ", fire)
+                    var dateSelector = document.getElementById("date_filter")
+                    $(function() {
+                        $('#daterange').daterangepicker({
+                            startDate: "01/01/2014",
+                            endDate: "01/01/2020",
+                            opens: 'left',
+                            "linkedCalendars": false
+
+                        }, function(start, end, label) {
+                            console.log("A new date selection was made: " + start.format('YYYY-MM-DD') + ' to ' + end.format('YYYY-MM-DD'));
+                            fire = og_data.filter(function(d, i) {
+                                date = new Date(d.TFS_Arrival_Time)
+                                start = new Date(start)
+                                end = new Date(end)
+                                    //console.log(start <= date && date <= end)
+                                return (start <= date && date <= end);
+                            })
+                            d3.selectAll("svg").remove();
+                            drawMap(toronto, fire, station)
+                        });
+                    });
+
+                    dateSelector.addEventListener("change", function() {
+                        min_val = "2015-08-29"
+                        max_val = "2017-08-29"
+
+
+                    });
+
 
                     /*
                     Fire Dataset attributes: 
