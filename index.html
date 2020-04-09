@@ -3,6 +3,7 @@
 <head>
     <title> Toronto Fire Incidents</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="/images/icon.png" type="image/x-icon">
 </head>
 
 <body>
@@ -30,28 +31,29 @@
 
     <!--   center svg in div   -->
     <div class="wrapper">
-        <!--Gradient Legend-->
-        <div id="legend1"></div>
-        <div id="date_filter">
+
+
+        <div id="date_filter" class="inline">
             <input type="text" id="daterange" />
         </div>
 
-
-
-
-        <div id="cause_filter">
+        <div id="cause_filter" class="inline">
             Cause of Fire incidents:<br>
             <input type="checkbox" checked name="cause" value="Undetermined"><label>Undetermined</label><br>
             <input type="checkbox" checked name="cause" value="Electrical Failure"><label>Electrical Failure</label><br>
             <input type="checkbox" checked name="cause" value="Improperly Discarded"><label>Improperly
                 Discarded</label><br>
             <input type="checkbox" checked name="cause" value="Unattended"><label>Unattended</label><br>
-            <input type="checkbox" checked name="cause" value="Other unintentional cause"><label>Other unintentional
-                cause</label><br>
+            <input type="checkbox" checked name="cause" value="Other unintentional cause"><label>Other Unintentional
+                Cause</label><br>
         </div>
         <!--Potential source: http://bl.ocks.org/timelyportfolio/5c136de85de1c2abb6fc-->
 
+        <!--Gradient Legend-->
+        <div id="legends"></div>
+        <div id="vis"></div>
     </div>
+
     <script>
         // load TopoJSON file
         d3.json("data/toronto_topo.json", function(error, toronto) {
@@ -187,8 +189,8 @@
 
 
 
-            var mapWidth = 750,
-                mapHeight = 750;
+            var mapWidth = 1000,
+                mapHeight = 1000;
 
             var c10 = d3.scale.category10();
             // In newer version
@@ -204,9 +206,13 @@
             // In newer version -- NO ERROR BUT NOT WORKING
             //var path = d3.geoPath().projection(projection);
 
-            var svg = d3.select(".wrapper").append("svg")
+            var svg = d3.select("#vis")
+                .append("svg")
                 .attr("width", mapWidth)
-                .attr("height", mapHeight);
+                .attr("height", mapHeight)
+                .call(d3.behavior.zoom().on("zoom", function() {
+                    svg.attr("transform", "translate(" + d3.event.translate + ")" + " scale(" + d3.event.scale + ")")
+                }));
 
             var mapLabel = svg.append("text")
                 .attr("y", 20)
@@ -286,8 +292,8 @@
             function mouseover(d) {
                 tooltip.transition()
                     .duration(200)
-                    .style("opacity", .9);
-                //Aggregarte data here: 
+                    .style("opacity", 0.9);
+                //Aggregate data here: 
 
                 total_incidents = 0;
                 var total_time = 0;
@@ -344,7 +350,12 @@
             // TO DO: Needs to fix the range of incident label
             var legendRectSize = 18;
             var legendSpacing = 4;
-            var legend = svg.selectAll('#legend1')
+            var legend = d3.select('#legends')
+                .append("svg")
+                .attr('width', 100)
+                .attr('height', 200);
+
+            legend.selectAll("g")
                 .data(colorScale.domain())
                 .enter()
                 .append('g')
@@ -352,22 +363,30 @@
                 .attr('transform', function(d, i) {
                     var height = legendRectSize + legendSpacing;
                     var offset = height * colorScale.domain().length / 2;
-                    var horz = -2 * legendRectSize + 100;
-                    var vert = i * height - offset + 200;
+                    var horz = -2 * legendRectSize + 40;
+                    var vert = i * height - offset + 100;
                     return 'translate(' + horz + ',' + vert + ')';
                 });
 
-            legend.append('rect')
+            legend.selectAll("g")
+                .append('rect')
                 .attr('width', legendRectSize)
                 .attr('height', legendRectSize)
                 .style('fill', colorScale)
                 .style('stroke', colorScale);
 
-            legend.append('text')
-                .attr('x', legendRectSize + legendSpacing)
-                .attr('y', legendRectSize - legendSpacing)
+            legend.selectAll("text")
+                .data(colorScale.domain())
+                .enter()
+                .append('text')
+                .attr('x', 30)
+                .attr("font-size", "10px")
+                .attr('y', function(d, i) {
+                    return (i + 1) * 22;
+                })
                 .style('fill', 'white')
                 .text(function(d) {
+                    console.log(d)
                     return d;
                 });
 

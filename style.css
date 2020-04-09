@@ -1,12 +1,14 @@
 body {
     color: black;
     background-color: #2e2e2e;
+    overflow: hidden;
 }
 
 .wrapper {
-    margin-left: auto;
-    margin-right: auto;
+    /* margin-left: auto;
+    margin-right: auto; */
     width: 800px;
+    margin: 0;
 }
 
 .map_mesh {
@@ -48,11 +50,49 @@ div.tooltip {
     border-radius: 6px;
 }
 
+#vis {
+    /* display: none; */
+    /* margin-left: auto;*/
+    /* margin-right: 20%; */
+    /* margin: 0 auto; */
+    /* z-index: -3; */
+    margin-left: 50%;
+    /* padding-top: 10%; */
+    /* display: inline; */
+}
+
 #cause_filter {
     color: white;
-    margin-top: 0rem;
-    margin-left: 30rem;
-    position: absolute;
+    /* margin-top: 0rem;
+    margin-left: 80%; 
+    position: absolute;*/
+    /* margin-right: 10rem; */
     border: red;
     border-radius: 2rem;
+    position: absolute;
+    right: 0;
+}
+
+#date_filter {
+    margin-left: 1rem;
+    position: absolute;
+    left: 0;
+}
+
+.inline {
+    display: inline;
+}
+
+#legends {
+    /* margin: 0; */
+    margin-left: 1rem;
+    margin-top: 1.5rem;
+    width: 110px;
+    position: absolute;
+    left: 0;
+    /*height: 230px; */
+}
+
+text {
+    margin-top: 2px;
 }
