@@ -21,7 +21,6 @@
     <script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
     <script src="https://d3js.org/d3-brush.v1.min.js"></script>
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
-
     <script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
@@ -31,9 +30,6 @@
 
     <!--   center svg in div   -->
     <div class="wrapper">
-
-
-
         <div id="cause_filter" class="inline">
             Cause of Fire incidents:<br>
             <input type="checkbox" checked name="cause" value="Undetermined"><label>Undetermined</label><br>
@@ -44,10 +40,8 @@
             <input type="checkbox" checked name="cause" value="Other unintentional cause"><label>Other Unintentional
                 Cause</label><br>
         </div>
-        <!--Potential source: http://bl.ocks.org/timelyportfolio/5c136de85de1c2abb6fc-->
         <div id="btnDiv"></div>
         <div id="picker"></div>
-        <!--Gradient Legend-->
         <div id="legends"></div>
         <div id="vis"></div>
     </div>
@@ -184,9 +178,6 @@
                         .attr("fill", "white")
                         .call(xAxis);
 
-
-
-
                     focus.append("g")
                         .attr("class", "x brush")
                         .call(brush)
@@ -266,10 +257,6 @@
                     Ext_agent_app_or_defer_time: "2015-08-29T11:52:31"
                     */
 
-
-                    // Needs an update function for the checkboxes
-
-
                     var choices = []
                     d3.selectAll("input[name='cause']").on("change", function() {
                         var choices = [];
@@ -289,7 +276,6 @@
                                 temp = d.Possible_Cause
                                 temp = temp.split("-")
                                 temp = temp[1].toString()
-
 
                                 //console.log(my_choices)
                                 //console.log("Sanity check: ", my_choices.includes(temp))
@@ -313,25 +299,12 @@
 
 
         function drawMap(toronto, fire, station) {
-
-
-
             var mapWidth = 1000,
                 mapHeight = 1000;
 
             var c10 = d3.scale.category10();
-            // In newer version
-            // d3.scaleOrdinal(d3.schemeCategory10);
-
-
             var projection = d3.geo.albers();
-            // In newer version
-            // var projection = d3.geoAlbers();
-
-
             var path = d3.geo.path().projection(projection);
-            // In newer version -- NO ERROR BUT NOT WORKING
-            //var path = d3.geoPath().projection(projection);
 
             var svg = d3.select("#vis")
                 .append("svg")
@@ -446,8 +419,6 @@
             /*
                 Section to add circles to the Map 
             */
-
-
 
             svg.selectAll('image')
                 .data(station)

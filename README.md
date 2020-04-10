@@ -18,7 +18,7 @@ We chose the Toronto Fire incidents data set for this project since we want to c
 ## Datasets
 
 - [Toronto Open Data](https://open.toronto.ca/dataset/fire-incidents/) provides list of fire incidents in Toronto
-- [Statistic Canada](https://www12.statcan.gc.ca/census-recensement/2016/dp-pd/prof/details/page.cfm?Lang=E&Geo1=CSD&Code1=3520005&Geo2=PR&Code2=35&SearchText=&SearchType=Begins&SearchPR=01&B1=Income&TABID=1&type=0) for Toronto census data which provides population and demographic datasets
+- [Statistic Canada](https://www03.cmhc-schl.gc.ca/hmip-pimh/en/TableMapChart/TableMatchingCriteria?GeographyType=MetropolitanMajorArea&GeographyId=2270&CategoryLevel1=Population%2C%20Households%20and%20Housing%20Stock&CategoryLevel2=Household%20Income&ColumnField=HouseholdIncomeRange&RowField=Neighbourhood&SearchTags%5B0%5D.Key=Households&SearchTags%5B0%5D.Value=Number&SearchTags%5B1%5D.Key=Statistics&SearchTags%5B1%5D.Value=AverageAndMedian) for Toronto census data which provides income by neigbourhood
 - [Toronto Map - JSON](https://github.com/jasonicarter/toronto-geojson)
 - [Toronto Fire Station](https://www.toronto.ca/community-people/public-safety-alerts/understanding-emergency-services/fire-station-locations/)
 
@@ -35,5 +35,5 @@ We chose the Toronto Fire incidents data set for this project since we want to c
 - https://www.r-bloggers.com/plotting-choropleths-from-shapefiles-in-r-with-ggmap-toronto-neighbourhoods-by-population/ for sketch reference
 - http://cityinsight-interface.ssg.coop/toronto-emissions for sketch reference
 - https://public.tableau.com/profile/lilly.tong#!/vizhome/shared/HNH4PXQRX for sketch and data reference
-- https://bl.ocks.org/duspviz-mit/9b6dce37101c30ab80d0bf378fe5e583 for gradient legend
-- https://bl.ocks.org/jkeohan/b8a3a9510036e40d3a4e for box legend
+- https://embed.plnkr.co/plunk/gE1xQu for box legend
+- http://bl.ocks.org/timelyportfolio/5c136de85de1c2abb6fc for date filter
