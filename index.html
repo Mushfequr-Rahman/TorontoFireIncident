@@ -33,9 +33,6 @@
     <div class="wrapper">
 
 
-        <div id="date_filter" class="inline">
-            <input type="text" id="daterange" />
-        </div>
 
         <div id="cause_filter" class="inline">
             Cause of Fire incidents:<br>
@@ -48,7 +45,8 @@
                 Cause</label><br>
         </div>
         <!--Potential source: http://bl.ocks.org/timelyportfolio/5c136de85de1c2abb6fc-->
-
+        <div id="btnDiv"></div>
+        <div id="picker"></div>
         <!--Gradient Legend-->
         <div id="legends"></div>
         <div id="vis"></div>
@@ -65,31 +63,159 @@
                     // console.log("Stations: ", station)
                     fire = fire.filter((d, i) => i % 10 == 0);
                     og_data = fire
-                        // console.log("Fire Dataset: ", fire)
-                    var dateSelector = document.getElementById("date_filter")
-                    $(function() {
-                        $('#daterange').daterangepicker({
-                            startDate: "01/01/2014",
-                            endDate: "01/01/2020",
-                            opens: 'right',
-                            linkedCalendars: false,
-                            alwaysShowCalendars: false,
+                    var margin = {
+                            top: 10,
+                            right: 10,
+                            bottom: 100,
+                            left: 15
+                        },
+                        margin2 = {
+                            top: 10,
+                            right: 10,
+                            bottom: 20,
+                            left: 15
+                        }
 
-                        }, function(start, end, label) {
+                    var picker_width = 500 - margin.left - margin.right
+                    var picker_height = 100 - margin2.top - margin2.bottom;
+                    var x = d3.time.scale().range([0, picker_width])
+                    var y = d3.scale.linear().range([picker_height, 0])
 
-                            console.log("A new date selection was made: " + start.format('YYYY-MM-DD') + ' to ' + end.format('YYYY-MM-DD'));
-                            fire = og_data.filter(function(d, i) {
-                                date = new Date(d.TFS_Arrival_Time)
-                                start = new Date(start)
-                                end = new Date(end)
-                                    //console.log(start <= date && date <= end)
-                                return (start <= date && date <= end);
-                            })
-                            d3.selectAll("svg").remove();
-                            drawMap(toronto, fire, station)
-                        });
+
+                    var fire_by_time = d3.nest()
+                        .key(function(d) {
+                            format = d3.time.format("%b %Y")
+                            var c_date = format(new Date(d.TFS_Arrival_Time))
+                                //console.log("Current date:", c_date);
+                            return c_date;
+                        })
+                        .entries(fire)
+
+                    //Sort the data by date:
+                    fire_by_time = fire_by_time.sort(function(a, b) {
+
+                        return new Date(a.key) - new Date(b.key);
                     });
+                    console.log("Length of new data: ", fire_by_time)
 
+
+                    x.domain(d3.extent(fire_by_time, function(d) {
+                        //console.log(new Date(d.key))
+                        return new Date(d.key);
+                    }))
+                    y.domain([0, d3.max(fire_by_time.map(function(d) {
+                        //console.log(d.values.length)
+                        return d.values.length;
+                    }))])
+
+                    var xAxis = d3.svg.axis().scale(x).orient("bottom")
+                    var yAxis = d3.svg.axis().scale(y).orient("left")
+                    var brush = d3.svg.brush()
+                        .x(x)
+                        .on("brush", brushed);
+
+
+                    var btns = d3.select("#btnDiv").selectAll("button").data([2011, 2012, 2013, 2014, 2015, 2016, 2017])
+
+                    btns = btns.enter().append("button").style("display", "inline-block")
+
+                    // fill the buttons with the year from the data assigned to them
+                    btns.each(function(d) {
+                        this.innerText = d;
+                    })
+
+                    btns.on("click", drawBrush);
+
+                    function drawBrush() {
+                        // our year will this.innerText
+                        console.log(this.innerText)
+
+                        // define our brush extent to be begin and end of the year
+                        brush.extent([new Date(this.innerText + '-01-01'), new Date(this.innerText + '-12-31')])
+
+                        // now draw the brush to match our extent
+                        // use transition to slow it down so we can see what is happening
+                        // remove transition so just d3.select(".brush") to just draw
+                        brush(d3.select(".brush").transition());
+
+                        // now fire the brushstart, brushmove, and brushend events
+                        // remove transition so just d3.select(".brush") to just draw
+                        brush.event(d3.select(".brush").transition().delay(1000))
+                    }
+
+                    var area = d3.svg.area()
+                        .interpolate("monotone")
+                        .x(function(d) {
+                            //console.log("X coordinate", x(new Date(d.key)))
+                            return x(new Date(d.key));
+                        })
+                        .y0(picker_height)
+                        .y1(function(d) {
+                            //console.log("Inside Area:", y(d.values.length))
+                            return y(d.values.length);
+                        });
+
+
+
+                    console.log("Area: ", area)
+                    var svg = d3.select("#picker").append("svg")
+                        .attr("width", picker_width + margin.left + margin.right)
+                        .attr("height", picker_height + margin.top + margin.bottom)
+                        .attr("id", "pick_date");
+                    svg.append("defs").append("clipPath")
+                        .attr("id", "clip")
+                        .append("rect")
+                        .attr("width", picker_width)
+                        .attr("height", picker_height);
+
+                    var focus = svg.append("g")
+                        .attr("class", "focus")
+                        .attr("transform", "translate(" + margin2.left + "," + margin2.top + ")");
+
+                    focus.append("path")
+                        .datum(fire_by_time)
+                        .attr("class", "area")
+                        .attr("d", area)
+                        .attr("fill", 'salmon');
+
+                    focus.append("g")
+                        .attr("class", "x axis")
+                        .attr("transform", "translate(0," + picker_height + ")")
+                        .attr("fill", "white")
+                        .call(xAxis);
+
+
+
+
+                    focus.append("g")
+                        .attr("class", "x brush")
+                        .call(brush)
+                        .selectAll("rect")
+                        .attr("y", -6)
+                        .attr("height", picker_height + 7)
+                        .attr("fill", "rgba(0,0,0,0.5)");
+
+
+
+                    function brushed() {
+                        brush.event(d3.select(".brush").transition().delay(1000).duration(500))
+                        var extent = brush.extent();
+                        start = extent[0]
+                        end = extent[1]
+                        console.log(extent)
+                        fire = og_data.filter(function(d, i) {
+                            date = new Date(d.TFS_Arrival_Time)
+
+                            //console.log(start <= date && date <= end)
+                            return (start <= date && date <= end);
+                        });
+
+                        d3.select("#map").remove()
+                        d3.select("#color_key").remove()
+                        drawMap(toronto, fire, station)
+                        return null;
+
+                    }
 
 
 
@@ -171,7 +297,8 @@
                                 choices = []
                             } else return null;
                         })
-                        d3.selectAll("svg").remove();
+                        d3.select("#map").remove()
+                        d3.select("#color_key").remove()
                         drawMap(toronto, new_data, station)
 
 
@@ -210,6 +337,7 @@
                 .append("svg")
                 .attr("width", mapWidth)
                 .attr("height", mapHeight)
+                .attr("id", "map")
                 .call(d3.behavior.zoom().on("zoom", function() {
                     svg.attr("transform", "translate(" + d3.event.translate + ")" + " scale(" + d3.event.scale + ")")
                 }));
@@ -353,7 +481,8 @@
             var legend = d3.select('#legends')
                 .append("svg")
                 .attr('width', 100)
-                .attr('height', 200);
+                .attr('height', 200)
+                .attr("id", "color_key");
 
             legend.selectAll("g")
                 .data(colorScale.domain())
