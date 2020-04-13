@@ -5,8 +5,6 @@ body {
 }
 
 .wrapper {
-    /* margin-left: auto;
-    margin-right: auto; */
     width: 800px;
     margin: 0;
 }
@@ -51,32 +49,28 @@ div.tooltip {
 }
 
 #vis {
-    /* display: none; */
-    /* margin-left: auto;*/
-    /* margin-right: 20%; */
-    /* margin: 0 auto; */
-    /* z-index: -3; */
-    margin-left: 50%;
-    /* padding-top: 10%; */
-    /* display: inline; */
+    position: absolute;
+    left: 20%;
+    top: 0;
+    z-index: -1;
 }
 
 #cause_filter {
+    position: fixed;
     color: white;
-    /* margin-top: 0rem;
-    margin-left: 80%; 
-    position: absolute;*/
-    /* margin-right: 10rem; */
     border: red;
     border-radius: 2rem;
     position: absolute;
     right: 0;
+    z-index: 1;
 }
 
 #date_filter {
+    position: fixed;
     margin-left: 1rem;
     position: absolute;
     left: 0;
+    z-index: 1;
 }
 
 .inline {
@@ -84,13 +78,13 @@ div.tooltip {
 }
 
 #legends {
-    /* margin: 0; */
+    position: fixed;
+    z-index: 1;
     margin-left: 1rem;
-    margin-top: 1.5rem;
+    margin-top: 1rem;
     width: 110px;
     position: absolute;
     left: 0;
-    /*height: 230px; */
 }
 
 text {

@@ -299,8 +299,8 @@
 
 
         function drawMap(toronto, fire, station) {
-            var mapWidth = 1000,
-                mapHeight = 1000;
+            var mapWidth = 1050,
+                mapHeight = 1050;
 
             var c10 = d3.scale.category10();
             var projection = d3.geo.albers();
@@ -411,7 +411,7 @@
                 var avg_wait_time = total_time / total_incidents
 
                 tooltip.html("Intersection Name: " + d.properties.name.slice(0, -5) +
-                        "<br> Total Incidents:" + total_incidents + "<br> Average Waiting Time:" + avg_wait_time.toFixed(2))
+                        "<br> Total Incidents:" + total_incidents + "<br> Average Waiting Time:" + avg_wait_time.toFixed(2) + ' minutes')
                     .style("left", (d3.event.pageX) + "px")
                     .style("top", (d3.event.pageY - 28) + "px");
             }
