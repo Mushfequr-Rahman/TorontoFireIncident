@@ -155,8 +155,9 @@ if (error) throw error;
             }
 
             function brushended() {
-                const selection = d3.event.selection;
-                if (!d3.event.sourceEvent || !selection) return;
+                brush.clear().event(d3.select(".brush"));
+                //const selection = d3.event.selection;
+                //if (!d3.event.sourceEvent || !selection) return;
             }
 
 
@@ -292,14 +293,14 @@ function drawMap(toronto, fire, station) {
 
     //Section for color scale:
     var colorScale = d3.scaleThreshold()
-        .domain([0, 2, 10, 50, 100, 150, 200, 300])
+        .domain([0, 5, 10, 15, 20, 30, 40, 50])
         .range(d3.schemeReds[9]);
 
     var list = [];
     // Mushy TODO: Normalize the count of the incidents with area 
     neighbourhoods.features.forEach(function(d) {
         var dict = {}
-        var area = d3.geoArea(d) * 10000000
+        //var area = d3.geoArea(d) * 10000000
 
         dict[d] = 0;
         for (var i in fire) {
@@ -308,7 +309,8 @@ function drawMap(toronto, fire, station) {
             }
         }
         //console.log("Normalized Score: ", dict[d] / area)
-        list.push(dict[d] / area)
+        //list.push(dict[d] / area)
+        list.push(dict[d])
     });
 
     // get individual neighbourhoods
@@ -352,14 +354,13 @@ function drawMap(toronto, fire, station) {
                 arr_t = new Date(fire[i].TFS_Arrival_Time)
                 alarm_t = new Date(fire[i].TFS_Alarm_Time)
                 total_time += (arr_t - alarm_t) / (3600 * 24)
-
             }
 
         }
         var avg_wait_time = total_time / total_incidents
 
         tooltip.html("Area Name: " + d.properties.name.slice(0, -5) +
-                "<br> Total Incidents:" + total_incidents + "<br> Average Waiting Time:" + avg_wait_time.toFixed(2) + ' minutes')
+                "<br> Total Incidents: " + total_incidents + "<br> Average Waiting Time: " + avg_wait_time.toFixed(2) + ' minutes')
             .style("left", (d3.event.pageX) + "px")
             .style("top", (d3.event.pageY - 28) + "px");
     }
@@ -434,10 +435,19 @@ function drawMap(toronto, fire, station) {
         })
         .style('fill', 'white')
         .text(function(d) {
-            return d;
+            text = d;
+            // Customized legend text
+            if(d == 0) text = "< 5";
+            else if(d == 5)  text = "5 - 9";
+            else if(d == 10) text = "10 -14";
+            else if(d == 15) text = "15 - 20";
+            else if(d == 20) text = "20 -29";
+            else if(d == 30) text = "30 -39";
+            else if(d == 40) text = "40 - 49";
+            else if(d == 50) text = ">= 50"
+            return text;
         });
 
-    /* This needs newer version of the libraries)*/
     var y = d3.scaleLinear()
         .range([300, 0])
         .domain([68, 12]);
@@ -445,18 +455,6 @@ function drawMap(toronto, fire, station) {
 
     var yAxis = d3.svg.axis().scale(y).orient("bottom").ticks(5);
 
-
     console.log("Finished Drawing map")
-
-    key.append("g")
-        .attr("class", "y axis")
-        .attr("transform", "translate(0,30)")
-        .call(yAxis)
-        .append("text")
-        .attr("transform", "rotate(-90)")
-        .attr("y", 0)
-        .attr("dy", ".71em")
-        .style("text-anchor", "end")
-        .text("axis title");
 
 }

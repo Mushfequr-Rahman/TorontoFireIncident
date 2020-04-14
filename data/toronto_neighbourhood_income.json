@@ -1,947 +1,947 @@
 [
   {
     "Neighbourhood": "Toronto",
-    "Average Household Income Before Taxes": "109,480",
-    "Median Household Income Before Taxes": "78,378",
-    "Average Household Income After Taxes": "87,993",
-    "Median Household Income After Taxes": "68,627"
+    "Avg_Income_Before_Tax": "109,480",
+    "Median_Income_Before_Tax": "78,378",
+    "Avg_Income_After_Tax": "87,993",
+    "Median_Income_After_Tax": "68,627"
   },
   {
     "Neighbourhood": "Agincourt/Malvern",
-    "Average Household Income Before Taxes": "80,147",
-    "Median Household Income Before Taxes": "68,108",
-    "Average Household Income After Taxes": "71,025",
-    "Median Household Income After Taxes": "62,304"
+    "Avg_Income_Before_Tax": "80,147",
+    "Median_Income_Before_Tax": "68,108",
+    "Avg_Income_After_Tax": "71,025",
+    "Median_Income_After_Tax": "62,304"
   },
   {
     "Neighbourhood": "Ajax/Pickering",
-    "Average Household Income Before Taxes": "115,659",
-    "Median Household Income Before Taxes": "98,363",
-    "Average Household Income After Taxes": "94,805",
-    "Median Household Income After Taxes": "84,664"
+    "Avg_Income_Before_Tax": "115,659",
+    "Median_Income_Before_Tax": "98,363",
+    "Avg_Income_After_Tax": "94,805",
+    "Median_Income_After_Tax": "84,664"
   },
   {
     "Neighbourhood": "Alderwood",
-    "Average Household Income Before Taxes": "102,434",
-    "Median Household Income Before Taxes": "83,249",
-    "Average Household Income After Taxes": "84,163",
-    "Median Household Income After Taxes": "73,039"
+    "Avg_Income_Before_Tax": "102,434",
+    "Median_Income_Before_Tax": "83,249",
+    "Avg_Income_After_Tax": "84,163",
+    "Median_Income_After_Tax": "73,039"
   },
   {
     "Neighbourhood": "Aurora",
-    "Average Household Income Before Taxes": "147,604",
-    "Median Household Income Before Taxes": "106,761",
-    "Average Household Income After Taxes": "113,594",
-    "Median Household Income After Taxes": "90,592"
+    "Avg_Income_Before_Tax": "147,604",
+    "Median_Income_Before_Tax": "106,761",
+    "Avg_Income_After_Tax": "113,594",
+    "Median_Income_After_Tax": "90,592"
   },
   {
     "Neighbourhood": "Banbury-Don Mills/York Mills",
-    "Average Household Income Before Taxes": "245,866",
-    "Median Household Income Before Taxes": "90,620",
-    "Average Household Income After Taxes": "168,106",
-    "Median Household Income After Taxes": "76,046"
+    "Avg_Income_Before_Tax": "245,866",
+    "Median_Income_Before_Tax": "90,620",
+    "Avg_Income_After_Tax": "168,106",
+    "Median_Income_After_Tax": "76,046"
   },
   {
     "Neighbourhood": "Bathurst Manor",
-    "Average Household Income Before Taxes": "95,977",
-    "Median Household Income Before Taxes": "69,634",
-    "Average Household Income After Taxes": "79,185",
-    "Median Household Income After Taxes": "62,172"
+    "Avg_Income_Before_Tax": "95,977",
+    "Median_Income_Before_Tax": "69,634",
+    "Avg_Income_After_Tax": "79,185",
+    "Median_Income_After_Tax": "62,172"
   },
   {
     "Neighbourhood": "Bay Street Corridor",
-    "Average Household Income Before Taxes": "85,657",
-    "Median Household Income Before Taxes": "48,737",
-    "Average Household Income After Taxes": "65,786",
-    "Median Household Income After Taxes": "44,028"
+    "Avg_Income_Before_Tax": "85,657",
+    "Median_Income_Before_Tax": "48,737",
+    "Avg_Income_After_Tax": "65,786",
+    "Median_Income_After_Tax": "44,028"
   },
   {
     "Neighbourhood": "Bayview Village",
-    "Average Household Income Before Taxes": "96,616",
-    "Median Household Income Before Taxes": "67,355",
-    "Average Household Income After Taxes": "76,983",
-    "Median Household Income After Taxes": "58,341"
+    "Avg_Income_Before_Tax": "96,616",
+    "Median_Income_Before_Tax": "67,355",
+    "Avg_Income_After_Tax": "76,983",
+    "Median_Income_After_Tax": "58,341"
   },
   {
     "Neighbourhood": "Bayview Woods-Steeles/Hillcrest Village",
-    "Average Household Income Before Taxes": "96,267",
-    "Median Household Income Before Taxes": "74,082",
-    "Average Household Income After Taxes": "79,794",
-    "Median Household Income After Taxes": "65,844"
+    "Avg_Income_Before_Tax": "96,267",
+    "Median_Income_Before_Tax": "74,082",
+    "Avg_Income_After_Tax": "79,794",
+    "Median_Income_After_Tax": "65,844"
   },
   {
     "Neighbourhood": "Bedford Park-Nortown",
-    "Average Household Income Before Taxes": "252,266",
-    "Median Household Income Before Taxes": "116,672",
-    "Average Household Income After Taxes": "175,773",
-    "Median Household Income After Taxes": "98,522"
+    "Avg_Income_Before_Tax": "252,266",
+    "Median_Income_Before_Tax": "116,672",
+    "Avg_Income_After_Tax": "175,773",
+    "Median_Income_After_Tax": "98,522"
   },
   {
     "Neighbourhood": "Beechborough-Greenbrook",
-    "Average Household Income Before Taxes": "62,740",
-    "Median Household Income Before Taxes": "45,211",
-    "Average Household Income After Taxes": "54,624",
-    "Median Household Income After Taxes": "42,083"
+    "Avg_Income_Before_Tax": "62,740",
+    "Median_Income_Before_Tax": "45,211",
+    "Avg_Income_After_Tax": "54,624",
+    "Median_Income_After_Tax": "42,083"
   },
   {
     "Neighbourhood": "Bendale",
-    "Average Household Income Before Taxes": "71,591",
-    "Median Household Income Before Taxes": "60,292",
-    "Average Household Income After Taxes": "62,300",
-    "Median Household Income After Taxes": "54,318"
+    "Avg_Income_Before_Tax": "71,591",
+    "Median_Income_Before_Tax": "60,292",
+    "Avg_Income_After_Tax": "62,300",
+    "Median_Income_After_Tax": "54,318"
   },
   {
     "Neighbourhood": "Birchcliffe-Cliffside",
-    "Average Household Income Before Taxes": "103,715",
-    "Median Household Income Before Taxes": "73,216",
-    "Average Household Income After Taxes": "82,242",
-    "Median Household Income After Taxes": "63,646"
+    "Avg_Income_Before_Tax": "103,715",
+    "Median_Income_Before_Tax": "73,216",
+    "Avg_Income_After_Tax": "82,242",
+    "Median_Income_After_Tax": "63,646"
   },
   {
     "Neighbourhood": "Black Creek",
-    "Average Household Income Before Taxes": "63,139",
-    "Median Household Income Before Taxes": "51,999",
-    "Average Household Income After Taxes": "57,082",
-    "Median Household Income After Taxes": "48,751"
+    "Avg_Income_Before_Tax": "63,139",
+    "Median_Income_Before_Tax": "51,999",
+    "Avg_Income_After_Tax": "57,082",
+    "Median_Income_After_Tax": "48,751"
   },
   {
     "Neighbourhood": "Bradford/West Gwillimbury/New Tecumseth",
-    "Average Household Income Before Taxes": "101,517",
-    "Median Household Income Before Taxes": "89,301",
-    "Average Household Income After Taxes": "84,617",
-    "Median Household Income After Taxes": "76,494"
+    "Avg_Income_Before_Tax": "101,517",
+    "Median_Income_Before_Tax": "89,301",
+    "Avg_Income_After_Tax": "84,617",
+    "Median_Income_After_Tax": "76,494"
   },
   {
     "Neighbourhood": "Brampton (East)",
-    "Average Household Income Before Taxes": "99,581",
-    "Median Household Income Before Taxes": "87,156",
-    "Average Household Income After Taxes": "86,211",
-    "Median Household Income After Taxes": "77,658"
+    "Avg_Income_Before_Tax": "99,581",
+    "Median_Income_Before_Tax": "87,156",
+    "Avg_Income_After_Tax": "86,211",
+    "Median_Income_After_Tax": "77,658"
   },
   {
     "Neighbourhood": "Brampton (West)",
-    "Average Household Income Before Taxes": "98,329",
-    "Median Household Income Before Taxes": "87,335",
-    "Average Household Income After Taxes": "84,188",
-    "Median Household Income After Taxes": "76,862"
+    "Avg_Income_Before_Tax": "98,329",
+    "Median_Income_Before_Tax": "87,335",
+    "Avg_Income_After_Tax": "84,188",
+    "Median_Income_After_Tax": "76,862"
   },
   {
     "Neighbourhood": "Briar Hill-Belgravia",
-    "Average Household Income Before Taxes": "71,541",
-    "Median Household Income Before Taxes": "60,899",
-    "Average Household Income After Taxes": "62,405",
-    "Median Household Income After Taxes": "53,943"
+    "Avg_Income_Before_Tax": "71,541",
+    "Median_Income_Before_Tax": "60,899",
+    "Avg_Income_After_Tax": "62,405",
+    "Median_Income_After_Tax": "53,943"
   },
   {
     "Neighbourhood": "Broadview North",
-    "Average Household Income Before Taxes": "74,786",
-    "Median Household Income Before Taxes": "52,731",
-    "Average Household Income After Taxes": "62,096",
-    "Median Household Income After Taxes": "47,648"
+    "Avg_Income_Before_Tax": "74,786",
+    "Median_Income_Before_Tax": "52,731",
+    "Avg_Income_After_Tax": "62,096",
+    "Median_Income_After_Tax": "47,648"
   },
   {
     "Neighbourhood": "Bronte",
-    "Average Household Income Before Taxes": "136,796",
-    "Median Household Income Before Taxes": "104,867",
-    "Average Household Income After Taxes": "105,737",
-    "Median Household Income After Taxes": "87,878"
+    "Avg_Income_Before_Tax": "136,796",
+    "Median_Income_Before_Tax": "104,867",
+    "Avg_Income_After_Tax": "105,737",
+    "Median_Income_After_Tax": "87,878"
   },
   {
     "Neighbourhood": "Brookhaven-Amesbury",
-    "Average Household Income Before Taxes": "67,742",
-    "Median Household Income Before Taxes": "52,988",
-    "Average Household Income After Taxes": "59,434",
-    "Median Household Income After Taxes": "48,784"
+    "Avg_Income_Before_Tax": "67,742",
+    "Median_Income_Before_Tax": "52,988",
+    "Avg_Income_After_Tax": "59,434",
+    "Median_Income_After_Tax": "48,784"
   },
   {
     "Neighbourhood": "Cabbagetown-South St. James Town",
-    "Average Household Income Before Taxes": "97,459",
-    "Median Household Income Before Taxes": "61,184",
-    "Average Household Income After Taxes": "75,976",
-    "Median Household Income After Taxes": "52,865"
+    "Avg_Income_Before_Tax": "97,459",
+    "Median_Income_Before_Tax": "61,184",
+    "Avg_Income_After_Tax": "75,976",
+    "Median_Income_After_Tax": "52,865"
   },
   {
     "Neighbourhood": "Caledon",
-    "Average Household Income Before Taxes": "137,519",
-    "Median Household Income Before Taxes": "113,664",
-    "Average Household Income After Taxes": "109,042",
-    "Median Household Income After Taxes": "96,428"
+    "Avg_Income_Before_Tax": "137,519",
+    "Median_Income_Before_Tax": "113,664",
+    "Avg_Income_After_Tax": "109,042",
+    "Median_Income_After_Tax": "96,428"
   },
   {
     "Neighbourhood": "Caledonia-Fairbank",
-    "Average Household Income Before Taxes": "76,713",
-    "Median Household Income Before Taxes": "66,048",
-    "Average Household Income After Taxes": "66,697",
-    "Median Household Income After Taxes": "58,691"
+    "Avg_Income_Before_Tax": "76,713",
+    "Median_Income_Before_Tax": "66,048",
+    "Avg_Income_After_Tax": "66,697",
+    "Median_Income_After_Tax": "58,691"
   },
   {
     "Neighbourhood": "Casa Loma",
-    "Average Household Income Before Taxes": "285,999",
-    "Median Household Income Before Taxes": "93,022",
-    "Average Household Income After Taxes": "199,378",
-    "Median Household Income After Taxes": "77,490"
+    "Avg_Income_Before_Tax": "285,999",
+    "Median_Income_Before_Tax": "93,022",
+    "Avg_Income_After_Tax": "199,378",
+    "Median_Income_After_Tax": "77,490"
   },
   {
     "Neighbourhood": "Churchill Meadows/Erin Mills",
-    "Average Household Income Before Taxes": "118,999",
-    "Median Household Income Before Taxes": "96,578",
-    "Average Household Income After Taxes": "97,453",
-    "Median Household Income After Taxes": "83,181"
+    "Avg_Income_Before_Tax": "118,999",
+    "Median_Income_Before_Tax": "96,578",
+    "Avg_Income_After_Tax": "97,453",
+    "Median_Income_After_Tax": "83,181"
   },
   {
     "Neighbourhood": "Church-Yonge Corridor",
-    "Average Household Income Before Taxes": "77,235",
-    "Median Household Income Before Taxes": "56,366",
-    "Average Household Income After Taxes": "62,037",
-    "Median Household Income After Taxes": "49,285"
+    "Avg_Income_Before_Tax": "77,235",
+    "Median_Income_Before_Tax": "56,366",
+    "Avg_Income_After_Tax": "62,037",
+    "Median_Income_After_Tax": "49,285"
   },
   {
     "Neighbourhood": "Clairlea-Birchmount",
-    "Average Household Income Before Taxes": "80,331",
-    "Median Household Income Before Taxes": "68,524",
-    "Average Household Income After Taxes": "69,513",
-    "Median Household Income After Taxes": "61,368"
+    "Avg_Income_Before_Tax": "80,331",
+    "Median_Income_Before_Tax": "68,524",
+    "Avg_Income_After_Tax": "69,513",
+    "Median_Income_After_Tax": "61,368"
   },
   {
     "Neighbourhood": "Clanton Park",
-    "Average Household Income Before Taxes": "101,821",
-    "Median Household Income Before Taxes": "69,997",
-    "Average Household Income After Taxes": "83,263",
-    "Median Household Income After Taxes": "62,017"
+    "Avg_Income_Before_Tax": "101,821",
+    "Median_Income_Before_Tax": "69,997",
+    "Avg_Income_After_Tax": "83,263",
+    "Median_Income_After_Tax": "62,017"
   },
   {
     "Neighbourhood": "Clarkson/Lorne Park",
-    "Average Household Income Before Taxes": "143,461",
-    "Median Household Income Before Taxes": "91,601",
-    "Average Household Income After Taxes": "109,484",
-    "Median Household Income After Taxes": "78,436"
+    "Avg_Income_Before_Tax": "143,461",
+    "Median_Income_Before_Tax": "91,601",
+    "Avg_Income_After_Tax": "109,484",
+    "Median_Income_After_Tax": "78,436"
   },
   {
     "Neighbourhood": "Cliffcrest",
-    "Average Household Income Before Taxes": "94,658",
-    "Median Household Income Before Taxes": "75,291",
-    "Average Household Income After Taxes": "77,040",
-    "Median Household Income After Taxes": "66,088"
+    "Avg_Income_Before_Tax": "94,658",
+    "Median_Income_Before_Tax": "75,291",
+    "Avg_Income_After_Tax": "77,040",
+    "Median_Income_After_Tax": "66,088"
   },
   {
     "Neighbourhood": "Cooksville",
-    "Average Household Income Before Taxes": "89,098",
-    "Median Household Income Before Taxes": "65,001",
-    "Average Household Income After Taxes": "74,358",
-    "Median Household Income After Taxes": "58,225"
+    "Avg_Income_Before_Tax": "89,098",
+    "Median_Income_Before_Tax": "65,001",
+    "Avg_Income_After_Tax": "74,358",
+    "Median_Income_After_Tax": "58,225"
   },
   {
     "Neighbourhood": "Crescent Town",
-    "Average Household Income Before Taxes": "57,135",
-    "Median Household Income Before Taxes": "46,669",
-    "Average Household Income After Taxes": "50,794",
-    "Median Household Income After Taxes": "43,544"
+    "Avg_Income_Before_Tax": "57,135",
+    "Median_Income_Before_Tax": "46,669",
+    "Avg_Income_After_Tax": "50,794",
+    "Median_Income_After_Tax": "43,544"
   },
   {
     "Neighbourhood": "Danforth Village-East York",
-    "Average Household Income Before Taxes": "100,060",
-    "Median Household Income Before Taxes": "81,253",
-    "Average Household Income After Taxes": "81,962",
-    "Median Household Income After Taxes": "69,968"
+    "Avg_Income_Before_Tax": "100,060",
+    "Median_Income_Before_Tax": "81,253",
+    "Avg_Income_After_Tax": "81,962",
+    "Median_Income_After_Tax": "69,968"
   },
   {
     "Neighbourhood": "Don Valley Village/Pleasant View",
-    "Average Household Income Before Taxes": "82,627",
-    "Median Household Income Before Taxes": "65,714",
-    "Average Household Income After Taxes": "70,731",
-    "Median Household Income After Taxes": "59,368"
+    "Avg_Income_Before_Tax": "82,627",
+    "Median_Income_Before_Tax": "65,714",
+    "Avg_Income_After_Tax": "70,731",
+    "Median_Income_After_Tax": "59,368"
   },
   {
     "Neighbourhood": "Dorset Park",
-    "Average Household Income Before Taxes": "68,617",
-    "Median Household Income Before Taxes": "57,986",
-    "Average Household Income After Taxes": "60,703",
-    "Median Household Income After Taxes": "52,823"
+    "Avg_Income_Before_Tax": "68,617",
+    "Median_Income_Before_Tax": "57,986",
+    "Avg_Income_After_Tax": "60,703",
+    "Median_Income_After_Tax": "52,823"
   },
   {
     "Neighbourhood": "Dovercourt/Davenport/Junction",
-    "Average Household Income Before Taxes": "80,325",
-    "Median Household Income Before Taxes": "65,167",
-    "Average Household Income After Taxes": "68,435",
-    "Median Household Income After Taxes": "58,332"
+    "Avg_Income_Before_Tax": "80,325",
+    "Median_Income_Before_Tax": "65,167",
+    "Avg_Income_After_Tax": "68,435",
+    "Median_Income_After_Tax": "58,332"
   },
   {
     "Neighbourhood": "Downsview",
-    "Average Household Income Before Taxes": "69,508",
-    "Median Household Income Before Taxes": "56,053",
-    "Average Household Income After Taxes": "61,524",
-    "Median Household Income After Taxes": "51,722"
+    "Avg_Income_Before_Tax": "69,508",
+    "Median_Income_Before_Tax": "56,053",
+    "Avg_Income_After_Tax": "61,524",
+    "Median_Income_After_Tax": "51,722"
   },
   {
     "Neighbourhood": "Dufferin Grove/Little Portugal",
-    "Average Household Income Before Taxes": "79,651",
-    "Median Household Income Before Taxes": "63,479",
-    "Average Household Income After Taxes": "66,579",
-    "Median Household Income After Taxes": "55,924"
+    "Avg_Income_Before_Tax": "79,651",
+    "Median_Income_Before_Tax": "63,479",
+    "Avg_Income_After_Tax": "66,579",
+    "Median_Income_After_Tax": "55,924"
   },
   {
     "Neighbourhood": "East End-Danforth",
-    "Average Household Income Before Taxes": "98,165",
-    "Median Household Income Before Taxes": "69,026",
-    "Average Household Income After Taxes": "78,737",
-    "Median Household Income After Taxes": "60,377"
+    "Avg_Income_Before_Tax": "98,165",
+    "Median_Income_Before_Tax": "69,026",
+    "Avg_Income_After_Tax": "78,737",
+    "Median_Income_After_Tax": "60,377"
   },
   {
     "Neighbourhood": "East Gwillimbury/Newmarket",
-    "Average Household Income Before Taxes": "118,812",
-    "Median Household Income Before Taxes": "98,005",
-    "Average Household Income After Taxes": "96,057",
-    "Median Household Income After Taxes": "83,782"
+    "Avg_Income_Before_Tax": "118,812",
+    "Median_Income_Before_Tax": "98,005",
+    "Avg_Income_After_Tax": "96,057",
+    "Median_Income_After_Tax": "83,782"
   },
   {
     "Neighbourhood": "Edenbridge-Humber Valley",
-    "Average Household Income Before Taxes": "203,189",
-    "Median Household Income Before Taxes": "84,113",
-    "Average Household Income After Taxes": "144,418",
-    "Median Household Income After Taxes": "71,988"
+    "Avg_Income_Before_Tax": "203,189",
+    "Median_Income_Before_Tax": "84,113",
+    "Avg_Income_After_Tax": "144,418",
+    "Median_Income_After_Tax": "71,988"
   },
   {
     "Neighbourhood": "Eglinton East",
-    "Average Household Income Before Taxes": "64,507",
-    "Median Household Income Before Taxes": "53,081",
-    "Average Household Income After Taxes": "57,703",
-    "Median Household Income After Taxes": "49,086"
+    "Avg_Income_Before_Tax": "64,507",
+    "Median_Income_Before_Tax": "53,081",
+    "Avg_Income_After_Tax": "57,703",
+    "Median_Income_After_Tax": "49,086"
   },
   {
     "Neighbourhood": "Elms-Old Rexdale",
-    "Average Household Income Before Taxes": "71,345",
-    "Median Household Income Before Taxes": "59,576",
-    "Average Household Income After Taxes": "63,156",
-    "Median Household Income After Taxes": "55,308"
+    "Avg_Income_Before_Tax": "71,345",
+    "Median_Income_Before_Tax": "59,576",
+    "Avg_Income_After_Tax": "63,156",
+    "Median_Income_After_Tax": "55,308"
   },
   {
     "Neighbourhood": "Englemount-Lawrence",
-    "Average Household Income Before Taxes": "93,525",
-    "Median Household Income Before Taxes": "58,003",
-    "Average Household Income After Taxes": "77,541",
-    "Median Household Income After Taxes": "52,174"
+    "Avg_Income_Before_Tax": "93,525",
+    "Median_Income_Before_Tax": "58,003",
+    "Avg_Income_After_Tax": "77,541",
+    "Median_Income_After_Tax": "52,174"
   },
   {
     "Neighbourhood": "Eringate-Centennial-West Deane",
-    "Average Household Income Before Taxes": "103,931",
-    "Median Household Income Before Taxes": "88,872",
-    "Average Household Income After Taxes": "86,744",
-    "Median Household Income After Taxes": "77,502"
+    "Avg_Income_Before_Tax": "103,931",
+    "Median_Income_Before_Tax": "88,872",
+    "Avg_Income_After_Tax": "86,744",
+    "Median_Income_After_Tax": "77,502"
   },
   {
     "Neighbourhood": "Etobicoke West Mall",
-    "Average Household Income Before Taxes": "98,961",
-    "Median Household Income Before Taxes": "72,429",
-    "Average Household Income After Taxes": "80,527",
-    "Median Household Income After Taxes": "62,970"
+    "Avg_Income_Before_Tax": "98,961",
+    "Median_Income_Before_Tax": "72,429",
+    "Avg_Income_After_Tax": "80,527",
+    "Median_Income_After_Tax": "62,970"
   },
   {
     "Neighbourhood": "Flemingdon Park",
-    "Average Household Income Before Taxes": "59,208",
-    "Median Household Income Before Taxes": "48,917",
-    "Average Household Income After Taxes": "52,914",
-    "Median Household Income After Taxes": "45,910"
+    "Avg_Income_Before_Tax": "59,208",
+    "Median_Income_Before_Tax": "48,917",
+    "Avg_Income_After_Tax": "52,914",
+    "Median_Income_After_Tax": "45,910"
   },
   {
     "Neighbourhood": "Forest Hill North",
-    "Average Household Income Before Taxes": "159,724",
-    "Median Household Income Before Taxes": "70,920",
-    "Average Household Income After Taxes": "117,830",
-    "Median Household Income After Taxes": "61,360"
+    "Avg_Income_Before_Tax": "159,724",
+    "Median_Income_Before_Tax": "70,920",
+    "Avg_Income_After_Tax": "117,830",
+    "Median_Income_After_Tax": "61,360"
   },
   {
     "Neighbourhood": "Forest Hill South",
-    "Average Household Income Before Taxes": "473,219",
-    "Median Household Income Before Taxes": "119,484",
-    "Average Household Income After Taxes": "327,638",
-    "Median Household Income After Taxes": "98,525"
+    "Avg_Income_Before_Tax": "473,219",
+    "Median_Income_Before_Tax": "119,484",
+    "Avg_Income_After_Tax": "327,638",
+    "Median_Income_After_Tax": "98,525"
   },
   {
     "Neighbourhood": "Georgina",
-    "Average Household Income Before Taxes": "92,688",
-    "Median Household Income Before Taxes": "81,554",
-    "Average Household Income After Taxes": "77,888",
-    "Median Household Income After Taxes": "70,480"
+    "Avg_Income_Before_Tax": "92,688",
+    "Median_Income_Before_Tax": "81,554",
+    "Avg_Income_After_Tax": "77,888",
+    "Median_Income_After_Tax": "70,480"
   },
   {
     "Neighbourhood": "Guildwood",
-    "Average Household Income Before Taxes": "106,787",
-    "Median Household Income Before Taxes": "87,538",
-    "Average Household Income After Taxes": "87,898",
-    "Median Household Income After Taxes": "75,895"
+    "Avg_Income_Before_Tax": "106,787",
+    "Median_Income_Before_Tax": "87,538",
+    "Avg_Income_After_Tax": "87,898",
+    "Median_Income_After_Tax": "75,895"
   },
   {
     "Neighbourhood": "Henry Farm",
-    "Average Household Income Before Taxes": "70,357",
-    "Median Household Income Before Taxes": "56,644",
-    "Average Household Income After Taxes": "59,852",
-    "Median Household Income After Taxes": "51,098"
+    "Avg_Income_Before_Tax": "70,357",
+    "Median_Income_Before_Tax": "56,644",
+    "Avg_Income_After_Tax": "59,852",
+    "Median_Income_After_Tax": "51,098"
   },
   {
     "Neighbourhood": "High Park North/Junction",
-    "Average Household Income Before Taxes": "102,853",
-    "Median Household Income Before Taxes": "73,547",
-    "Average Household Income After Taxes": "82,111",
-    "Median Household Income After Taxes": "63,424"
+    "Avg_Income_Before_Tax": "102,853",
+    "Median_Income_Before_Tax": "73,547",
+    "Avg_Income_After_Tax": "82,111",
+    "Median_Income_After_Tax": "63,424"
   },
   {
     "Neighbourhood": "High Park-Swansea",
-    "Average Household Income Before Taxes": "125,669",
-    "Median Household Income Before Taxes": "82,753",
-    "Average Household Income After Taxes": "96,836",
-    "Median Household Income After Taxes": "69,304"
+    "Avg_Income_Before_Tax": "125,669",
+    "Median_Income_Before_Tax": "82,753",
+    "Avg_Income_After_Tax": "96,836",
+    "Median_Income_After_Tax": "69,304"
   },
   {
     "Neighbourhood": "Humber Heights-Westmount",
-    "Average Household Income Before Taxes": "91,737",
-    "Median Household Income Before Taxes": "68,996",
-    "Average Household Income After Taxes": "76,669",
-    "Median Household Income After Taxes": "60,653"
+    "Avg_Income_Before_Tax": "91,737",
+    "Median_Income_Before_Tax": "68,996",
+    "Avg_Income_After_Tax": "76,669",
+    "Median_Income_After_Tax": "60,653"
   },
   {
     "Neighbourhood": "Humewood-Cedarvale",
-    "Average Household Income Before Taxes": "112,354",
-    "Median Household Income Before Taxes": "61,110",
-    "Average Household Income After Taxes": "86,327",
-    "Median Household Income After Taxes": "54,557"
+    "Avg_Income_Before_Tax": "112,354",
+    "Median_Income_Before_Tax": "61,110",
+    "Avg_Income_After_Tax": "86,327",
+    "Median_Income_After_Tax": "54,557"
   },
   {
     "Neighbourhood": "Ionview",
-    "Average Household Income Before Taxes": "63,825",
-    "Median Household Income Before Taxes": "53,177",
-    "Average Household Income After Taxes": "56,645",
-    "Median Household Income After Taxes": "49,000"
+    "Avg_Income_Before_Tax": "63,825",
+    "Median_Income_Before_Tax": "53,177",
+    "Avg_Income_After_Tax": "56,645",
+    "Median_Income_After_Tax": "49,000"
   },
   {
     "Neighbourhood": "Islington/City Centre North",
-    "Average Household Income Before Taxes": "98,226",
-    "Median Household Income Before Taxes": "69,274",
-    "Average Household Income After Taxes": "79,046",
-    "Median Household Income After Taxes": "60,262"
+    "Avg_Income_Before_Tax": "98,226",
+    "Median_Income_Before_Tax": "69,274",
+    "Avg_Income_After_Tax": "79,046",
+    "Median_Income_After_Tax": "60,262"
   },
   {
     "Neighbourhood": "Islington/City Centre South",
-    "Average Household Income Before Taxes": "102,170",
-    "Median Household Income Before Taxes": "80,395",
-    "Average Household Income After Taxes": "82,589",
-    "Median Household Income After Taxes": "68,401"
+    "Avg_Income_Before_Tax": "102,170",
+    "Median_Income_Before_Tax": "80,395",
+    "Avg_Income_After_Tax": "82,589",
+    "Median_Income_After_Tax": "68,401"
   },
   {
     "Neighbourhood": "Keelesdale-Eglinton West",
-    "Average Household Income Before Taxes": "70,938",
-    "Median Household Income Before Taxes": "57,780",
-    "Average Household Income After Taxes": "62,023",
-    "Median Household Income After Taxes": "53,029"
+    "Avg_Income_Before_Tax": "70,938",
+    "Median_Income_Before_Tax": "57,780",
+    "Avg_Income_After_Tax": "62,023",
+    "Median_Income_After_Tax": "53,029"
   },
   {
     "Neighbourhood": "Kennedy Park",
-    "Average Household Income Before Taxes": "63,615",
-    "Median Household Income Before Taxes": "51,028",
-    "Average Household Income After Taxes": "56,354",
-    "Median Household Income After Taxes": "46,107"
+    "Avg_Income_Before_Tax": "63,615",
+    "Median_Income_Before_Tax": "51,028",
+    "Avg_Income_After_Tax": "56,354",
+    "Median_Income_After_Tax": "46,107"
   },
   {
     "Neighbourhood": "Kensington-Chinatown",
-    "Average Household Income Before Taxes": "67,445",
-    "Median Household Income Before Taxes": "44,216",
-    "Average Household Income After Taxes": "56,342",
-    "Median Household Income After Taxes": "40,758"
+    "Avg_Income_Before_Tax": "67,445",
+    "Median_Income_Before_Tax": "44,216",
+    "Avg_Income_After_Tax": "56,342",
+    "Median_Income_After_Tax": "40,758"
   },
   {
     "Neighbourhood": "Kingsview Village-The Westway",
-    "Average Household Income Before Taxes": "79,031",
-    "Median Household Income Before Taxes": "60,824",
-    "Average Household Income After Taxes": "67,766",
-    "Median Household Income After Taxes": "54,456"
+    "Avg_Income_Before_Tax": "79,031",
+    "Median_Income_Before_Tax": "60,824",
+    "Avg_Income_After_Tax": "67,766",
+    "Median_Income_After_Tax": "54,456"
   },
   {
     "Neighbourhood": "Kingsway South",
-    "Average Household Income Before Taxes": "294,913",
-    "Median Household Income Before Taxes": "151,552",
-    "Average Household Income After Taxes": "198,998",
-    "Median Household Income After Taxes": "119,582"
+    "Avg_Income_Before_Tax": "294,913",
+    "Median_Income_Before_Tax": "151,552",
+    "Avg_Income_After_Tax": "198,998",
+    "Median_Income_After_Tax": "119,582"
   },
   {
     "Neighbourhood": "Lambton Baby Point",
-    "Average Household Income Before Taxes": "136,905",
-    "Median Household Income Before Taxes": "93,586",
-    "Average Household Income After Taxes": "105,023",
-    "Median Household Income After Taxes": "79,106"
+    "Avg_Income_Before_Tax": "136,905",
+    "Median_Income_Before_Tax": "93,586",
+    "Avg_Income_After_Tax": "105,023",
+    "Median_Income_After_Tax": "79,106"
   },
   {
     "Neighbourhood": "L'Amoreaux/Steeles/Milliken",
-    "Average Household Income Before Taxes": "77,309",
-    "Median Household Income Before Taxes": "62,871",
-    "Average Household Income After Taxes": "68,190",
-    "Median Household Income After Taxes": "57,879"
+    "Avg_Income_Before_Tax": "77,309",
+    "Median_Income_Before_Tax": "62,871",
+    "Avg_Income_After_Tax": "68,190",
+    "Median_Income_After_Tax": "57,879"
   },
   {
     "Neighbourhood": "Lansing-Westgate",
-    "Average Household Income Before Taxes": "142,669",
-    "Median Household Income Before Taxes": "80,384",
-    "Average Household Income After Taxes": "108,226",
-    "Median Household Income After Taxes": "69,011"
+    "Avg_Income_Before_Tax": "142,669",
+    "Median_Income_Before_Tax": "80,384",
+    "Avg_Income_After_Tax": "108,226",
+    "Median_Income_After_Tax": "69,011"
   },
   {
     "Neighbourhood": "Lawrence Park North",
-    "Average Household Income Before Taxes": "222,786",
-    "Median Household Income Before Taxes": "144,963",
-    "Average Household Income After Taxes": "157,696",
-    "Median Household Income After Taxes": "117,622"
+    "Avg_Income_Before_Tax": "222,786",
+    "Median_Income_Before_Tax": "144,963",
+    "Avg_Income_After_Tax": "157,696",
+    "Median_Income_After_Tax": "117,622"
   },
   {
     "Neighbourhood": "Lawrence Park South",
-    "Average Household Income Before Taxes": "344,703",
-    "Median Household Income Before Taxes": "151,885",
-    "Average Household Income After Taxes": "227,374",
-    "Median Household Income After Taxes": "118,255"
+    "Avg_Income_Before_Tax": "344,703",
+    "Median_Income_Before_Tax": "151,885",
+    "Avg_Income_After_Tax": "227,374",
+    "Median_Income_After_Tax": "118,255"
   },
   {
     "Neighbourhood": "Leaside-Bennington",
-    "Average Household Income Before Taxes": "249,071",
-    "Median Household Income Before Taxes": "126,930",
-    "Average Household Income After Taxes": "169,558",
-    "Median Household Income After Taxes": "105,554"
+    "Avg_Income_Before_Tax": "249,071",
+    "Median_Income_Before_Tax": "126,930",
+    "Avg_Income_After_Tax": "169,558",
+    "Median_Income_After_Tax": "105,554"
   },
   {
     "Neighbourhood": "Little Italy/Trinity-Bellwoods",
-    "Average Household Income Before Taxes": "108,013",
-    "Median Household Income Before Taxes": "71,812",
-    "Average Household Income After Taxes": "86,265",
-    "Median Household Income After Taxes": "63,335"
+    "Avg_Income_Before_Tax": "108,013",
+    "Median_Income_Before_Tax": "71,812",
+    "Avg_Income_After_Tax": "86,265",
+    "Median_Income_After_Tax": "63,335"
   },
   {
     "Neighbourhood": "Long Branch",
-    "Average Household Income Before Taxes": "83,336",
-    "Median Household Income Before Taxes": "61,536",
-    "Average Household Income After Taxes": "68,551",
-    "Median Household Income After Taxes": "54,280"
+    "Avg_Income_Before_Tax": "83,336",
+    "Median_Income_Before_Tax": "61,536",
+    "Avg_Income_After_Tax": "68,551",
+    "Median_Income_After_Tax": "54,280"
   },
   {
     "Neighbourhood": "Malton",
-    "Average Household Income Before Taxes": "72,040",
-    "Median Household Income Before Taxes": "61,297",
-    "Average Household Income After Taxes": "64,824",
-    "Median Household Income After Taxes": "56,547"
+    "Avg_Income_Before_Tax": "72,040",
+    "Median_Income_Before_Tax": "61,297",
+    "Avg_Income_After_Tax": "64,824",
+    "Median_Income_After_Tax": "56,547"
   },
   {
     "Neighbourhood": "Maple Leaf",
-    "Average Household Income Before Taxes": "83,171",
-    "Median Household Income Before Taxes": "62,976",
-    "Average Household Income After Taxes": "71,623",
-    "Median Household Income After Taxes": "57,288"
+    "Avg_Income_Before_Tax": "83,171",
+    "Median_Income_Before_Tax": "62,976",
+    "Avg_Income_After_Tax": "71,623",
+    "Median_Income_After_Tax": "57,288"
   },
   {
     "Neighbourhood": "Markham",
-    "Average Household Income Before Taxes": "113,087",
-    "Median Household Income Before Taxes": "89,111",
-    "Average Household Income After Taxes": "92,943",
-    "Median Household Income After Taxes": "78,508"
+    "Avg_Income_Before_Tax": "113,087",
+    "Median_Income_Before_Tax": "89,111",
+    "Avg_Income_After_Tax": "92,943",
+    "Median_Income_After_Tax": "78,508"
   },
   {
     "Neighbourhood": "Meadowvale",
-    "Average Household Income Before Taxes": "112,325",
-    "Median Household Income Before Taxes": "98,166",
-    "Average Household Income After Taxes": "93,460",
-    "Median Household Income After Taxes": "84,431"
+    "Avg_Income_Before_Tax": "112,325",
+    "Median_Income_Before_Tax": "98,166",
+    "Avg_Income_After_Tax": "93,460",
+    "Median_Income_After_Tax": "84,431"
   },
   {
     "Neighbourhood": "Milton/Halton Hills",
-    "Average Household Income Before Taxes": "123,347",
-    "Median Household Income Before Taxes": "105,381",
-    "Average Household Income After Taxes": "99,605",
-    "Median Household Income After Taxes": "89,136"
+    "Avg_Income_Before_Tax": "123,347",
+    "Median_Income_Before_Tax": "105,381",
+    "Avg_Income_After_Tax": "99,605",
+    "Median_Income_After_Tax": "89,136"
   },
   {
     "Neighbourhood": "Mimico",
-    "Average Household Income Before Taxes": "88,814",
-    "Median Household Income Before Taxes": "67,525",
-    "Average Household Income After Taxes": "71,772",
-    "Median Household Income After Taxes": "58,162"
+    "Avg_Income_Before_Tax": "88,814",
+    "Median_Income_Before_Tax": "67,525",
+    "Avg_Income_After_Tax": "71,772",
+    "Median_Income_After_Tax": "58,162"
   },
   {
     "Neighbourhood": "Mississauga Centre/Streetsville",
-    "Average Household Income Before Taxes": "93,974",
-    "Median Household Income Before Taxes": "78,436",
-    "Average Household Income After Taxes": "79,692",
-    "Median Household Income After Taxes": "68,988"
+    "Avg_Income_Before_Tax": "93,974",
+    "Median_Income_Before_Tax": "78,436",
+    "Avg_Income_After_Tax": "79,692",
+    "Median_Income_After_Tax": "68,988"
   },
   {
     "Neighbourhood": "Moore Park",
-    "Average Household Income Before Taxes": "285,789",
-    "Median Household Income Before Taxes": "97,762",
-    "Average Household Income After Taxes": "185,166",
-    "Median Household Income After Taxes": "79,968"
+    "Avg_Income_Before_Tax": "285,789",
+    "Median_Income_Before_Tax": "97,762",
+    "Avg_Income_After_Tax": "185,166",
+    "Median_Income_After_Tax": "79,968"
   },
   {
     "Neighbourhood": "Morningside",
-    "Average Household Income Before Taxes": "67,711",
-    "Median Household Income Before Taxes": "52,721",
-    "Average Household Income After Taxes": "60,082",
-    "Median Household Income After Taxes": "49,683"
+    "Avg_Income_Before_Tax": "67,711",
+    "Median_Income_Before_Tax": "52,721",
+    "Avg_Income_After_Tax": "60,082",
+    "Median_Income_After_Tax": "49,683"
   },
   {
     "Neighbourhood": "Moss Park/Regent Park",
-    "Average Household Income Before Taxes": "77,062",
-    "Median Household Income Before Taxes": "49,252",
-    "Average Household Income After Taxes": "61,365",
-    "Median Household Income After Taxes": "44,384"
+    "Avg_Income_Before_Tax": "77,062",
+    "Median_Income_Before_Tax": "49,252",
+    "Avg_Income_After_Tax": "61,365",
+    "Median_Income_After_Tax": "44,384"
   },
   {
     "Neighbourhood": "Mount Dennis",
-    "Average Household Income Before Taxes": "61,174",
-    "Median Household Income Before Taxes": "52,162",
-    "Average Household Income After Taxes": "54,492",
-    "Median Household Income After Taxes": "47,729"
+    "Avg_Income_Before_Tax": "61,174",
+    "Median_Income_Before_Tax": "52,162",
+    "Avg_Income_After_Tax": "54,492",
+    "Median_Income_After_Tax": "47,729"
   },
   {
     "Neighbourhood": "Mount Olive-Silverstone-Jamestown/Thistletown",
-    "Average Household Income Before Taxes": "68,002",
-    "Median Household Income Before Taxes": "57,414",
-    "Average Household Income After Taxes": "61,230",
-    "Median Household Income After Taxes": "53,662"
+    "Avg_Income_Before_Tax": "68,002",
+    "Median_Income_Before_Tax": "57,414",
+    "Avg_Income_After_Tax": "61,230",
+    "Median_Income_After_Tax": "53,662"
   },
   {
     "Neighbourhood": "Mount Pleasant East",
-    "Average Household Income Before Taxes": "151,193",
-    "Median Household Income Before Taxes": "93,566",
-    "Average Household Income After Taxes": "113,252",
-    "Median Household Income After Taxes": "78,509"
+    "Avg_Income_Before_Tax": "151,193",
+    "Median_Income_Before_Tax": "93,566",
+    "Avg_Income_After_Tax": "113,252",
+    "Median_Income_After_Tax": "78,509"
   },
   {
     "Neighbourhood": "Mount Pleasant West",
-    "Average Household Income Before Taxes": "83,447",
-    "Median Household Income Before Taxes": "61,839",
-    "Average Household Income After Taxes": "66,491",
-    "Median Household Income After Taxes": "53,810"
+    "Avg_Income_Before_Tax": "83,447",
+    "Median_Income_Before_Tax": "61,839",
+    "Avg_Income_After_Tax": "66,491",
+    "Median_Income_After_Tax": "53,810"
   },
   {
     "Neighbourhood": "New Toronto",
-    "Average Household Income Before Taxes": "75,834",
-    "Median Household Income Before Taxes": "50,891",
-    "Average Household Income After Taxes": "63,969",
-    "Median Household Income After Taxes": "46,284"
+    "Avg_Income_Before_Tax": "75,834",
+    "Median_Income_Before_Tax": "50,891",
+    "Avg_Income_After_Tax": "63,969",
+    "Median_Income_After_Tax": "46,284"
   },
   {
     "Neighbourhood": "North St. James Town",
-    "Average Household Income Before Taxes": "52,296",
-    "Median Household Income Before Taxes": "41,016",
-    "Average Household Income After Taxes": "45,679",
-    "Median Household Income After Taxes": "38,107"
+    "Avg_Income_Before_Tax": "52,296",
+    "Median_Income_Before_Tax": "41,016",
+    "Avg_Income_After_Tax": "45,679",
+    "Median_Income_After_Tax": "38,107"
   },
   {
     "Neighbourhood": "Oakridge",
-    "Average Household Income Before Taxes": "51,045",
-    "Median Household Income Before Taxes": "39,757",
-    "Average Household Income After Taxes": "46,194",
-    "Median Household Income After Taxes": "38,058"
+    "Avg_Income_Before_Tax": "51,045",
+    "Median_Income_Before_Tax": "39,757",
+    "Avg_Income_After_Tax": "46,194",
+    "Median_Income_After_Tax": "38,058"
   },
   {
     "Neighbourhood": "Oakville (excl. Bronte)",
-    "Average Household Income Before Taxes": "174,675",
-    "Median Household Income Before Taxes": "115,337",
-    "Average Household Income After Taxes": "129,237",
-    "Median Household Income After Taxes": "96,160"
+    "Avg_Income_Before_Tax": "174,675",
+    "Median_Income_Before_Tax": "115,337",
+    "Avg_Income_After_Tax": "129,237",
+    "Median_Income_After_Tax": "96,160"
   },
   {
     "Neighbourhood": "Oakwood-Vaughan",
-    "Average Household Income Before Taxes": "78,464",
-    "Median Household Income Before Taxes": "58,216",
-    "Average Household Income After Taxes": "66,585",
-    "Median Household Income After Taxes": "53,316"
+    "Avg_Income_Before_Tax": "78,464",
+    "Median_Income_Before_Tax": "58,216",
+    "Avg_Income_After_Tax": "66,585",
+    "Median_Income_After_Tax": "53,316"
   },
   {
     "Neighbourhood": "O'Connor-Parkview",
-    "Average Household Income Before Taxes": "85,231",
-    "Median Household Income Before Taxes": "59,729",
-    "Average Household Income After Taxes": "70,307",
-    "Median Household Income After Taxes": "54,093"
+    "Avg_Income_Before_Tax": "85,231",
+    "Median_Income_Before_Tax": "59,729",
+    "Avg_Income_After_Tax": "70,307",
+    "Median_Income_After_Tax": "54,093"
   },
   {
     "Neighbourhood": "Old East York",
-    "Average Household Income Before Taxes": "104,275",
-    "Median Household Income Before Taxes": "77,824",
-    "Average Household Income After Taxes": "84,171",
-    "Median Household Income After Taxes": "67,411"
+    "Avg_Income_Before_Tax": "104,275",
+    "Median_Income_Before_Tax": "77,824",
+    "Avg_Income_After_Tax": "84,171",
+    "Median_Income_After_Tax": "67,411"
   },
   {
     "Neighbourhood": "Orangeville/Mono",
-    "Average Household Income Before Taxes": "104,966",
-    "Median Household Income Before Taxes": "90,444",
-    "Average Household Income After Taxes": "86,840",
-    "Median Household Income After Taxes": "78,183"
+    "Avg_Income_Before_Tax": "104,966",
+    "Median_Income_Before_Tax": "90,444",
+    "Avg_Income_After_Tax": "86,840",
+    "Median_Income_After_Tax": "78,183"
   },
   {
     "Neighbourhood": "Parkwoods-Donalda",
-    "Average Household Income Before Taxes": "86,221",
-    "Median Household Income Before Taxes": "65,126",
-    "Average Household Income After Taxes": "71,835",
-    "Median Household Income After Taxes": "57,789"
+    "Avg_Income_Before_Tax": "86,221",
+    "Median_Income_Before_Tax": "65,126",
+    "Avg_Income_After_Tax": "71,835",
+    "Median_Income_After_Tax": "57,789"
   },
   {
     "Neighbourhood": "Playter Estates-Danforth",
-    "Average Household Income Before Taxes": "115,745",
-    "Median Household Income Before Taxes": "74,314",
-    "Average Household Income After Taxes": "90,234",
-    "Median Household Income After Taxes": "63,497"
+    "Avg_Income_Before_Tax": "115,745",
+    "Median_Income_Before_Tax": "74,314",
+    "Avg_Income_After_Tax": "90,234",
+    "Median_Income_After_Tax": "63,497"
   },
   {
     "Neighbourhood": "Port Credit",
-    "Average Household Income Before Taxes": "124,834",
-    "Median Household Income Before Taxes": "84,545",
-    "Average Household Income After Taxes": "97,316",
-    "Median Household Income After Taxes": "72,422"
+    "Avg_Income_Before_Tax": "124,834",
+    "Median_Income_Before_Tax": "84,545",
+    "Avg_Income_After_Tax": "97,316",
+    "Median_Income_After_Tax": "72,422"
   },
   {
     "Neighbourhood": "Princess-Rosethorn",
-    "Average Household Income Before Taxes": "227,300",
-    "Median Household Income Before Taxes": "139,039",
-    "Average Household Income After Taxes": "163,296",
-    "Median Household Income After Taxes": "114,008"
+    "Avg_Income_Before_Tax": "227,300",
+    "Median_Income_Before_Tax": "139,039",
+    "Avg_Income_After_Tax": "163,296",
+    "Median_Income_After_Tax": "114,008"
   },
   {
     "Neighbourhood": "Rexdale-Kipling",
-    "Average Household Income Before Taxes": "73,761",
-    "Median Household Income Before Taxes": "63,232",
-    "Average Household Income After Taxes": "64,800",
-    "Median Household Income After Taxes": "57,909"
+    "Avg_Income_Before_Tax": "73,761",
+    "Median_Income_Before_Tax": "63,232",
+    "Avg_Income_After_Tax": "64,800",
+    "Median_Income_After_Tax": "57,909"
   },
   {
     "Neighbourhood": "Richmond Hill/Vaughan/King",
-    "Average Household Income Before Taxes": "128,414",
-    "Median Household Income Before Taxes": "99,527",
-    "Average Household Income After Taxes": "103,010",
-    "Median Household Income After Taxes": "85,585"
+    "Avg_Income_Before_Tax": "128,414",
+    "Median_Income_Before_Tax": "99,527",
+    "Avg_Income_After_Tax": "103,010",
+    "Median_Income_After_Tax": "85,585"
   },
   {
     "Neighbourhood": "Riverdale",
-    "Average Household Income Before Taxes": "108,435",
-    "Median Household Income Before Taxes": "77,819",
-    "Average Household Income After Taxes": "86,070",
-    "Median Household Income After Taxes": "67,328"
+    "Avg_Income_Before_Tax": "108,435",
+    "Median_Income_Before_Tax": "77,819",
+    "Avg_Income_After_Tax": "86,070",
+    "Median_Income_After_Tax": "67,328"
   },
   {
     "Neighbourhood": "Rockcliffe-Smythe",
-    "Average Household Income Before Taxes": "66,875",
-    "Median Household Income Before Taxes": "54,908",
-    "Average Household Income After Taxes": "58,395",
-    "Median Household Income After Taxes": "49,624"
+    "Avg_Income_Before_Tax": "66,875",
+    "Median_Income_Before_Tax": "54,908",
+    "Avg_Income_After_Tax": "58,395",
+    "Median_Income_After_Tax": "49,624"
   },
   {
     "Neighbourhood": "Roncesvalles",
-    "Average Household Income Before Taxes": "89,367",
-    "Median Household Income Before Taxes": "63,130",
-    "Average Household Income After Taxes": "72,231",
-    "Median Household Income After Taxes": "55,906"
+    "Avg_Income_Before_Tax": "89,367",
+    "Median_Income_Before_Tax": "63,130",
+    "Avg_Income_After_Tax": "72,231",
+    "Median_Income_After_Tax": "55,906"
   },
   {
     "Neighbourhood": "Rosedale",
-    "Average Household Income Before Taxes": "423,428",
-    "Median Household Income Before Taxes": "114,625",
-    "Average Household Income After Taxes": "275,010",
-    "Median Household Income After Taxes": "92,347"
+    "Avg_Income_Before_Tax": "423,428",
+    "Median_Income_Before_Tax": "114,625",
+    "Avg_Income_After_Tax": "275,010",
+    "Median_Income_After_Tax": "92,347"
   },
   {
     "Neighbourhood": "Rouge",
-    "Average Household Income Before Taxes": "117,829",
-    "Median Household Income Before Taxes": "101,482",
-    "Average Household Income After Taxes": "97,714",
-    "Median Household Income After Taxes": "87,287"
+    "Avg_Income_Before_Tax": "117,829",
+    "Median_Income_Before_Tax": "101,482",
+    "Avg_Income_After_Tax": "97,714",
+    "Median_Income_After_Tax": "87,287"
   },
   {
     "Neighbourhood": "Rustic/Pelmo Park/Humberlea",
-    "Average Household Income Before Taxes": "73,165",
-    "Median Household Income Before Taxes": "55,839",
-    "Average Household Income After Taxes": "63,828",
-    "Median Household Income After Taxes": "50,962"
+    "Avg_Income_Before_Tax": "73,165",
+    "Median_Income_Before_Tax": "55,839",
+    "Avg_Income_After_Tax": "63,828",
+    "Median_Income_After_Tax": "50,962"
   },
   {
     "Neighbourhood": "Scarborough Village",
-    "Average Household Income Before Taxes": "67,599",
-    "Median Household Income Before Taxes": "49,568",
-    "Average Household Income After Taxes": "58,858",
-    "Median Household Income After Taxes": "46,658"
+    "Avg_Income_Before_Tax": "67,599",
+    "Median_Income_Before_Tax": "49,568",
+    "Avg_Income_After_Tax": "58,858",
+    "Median_Income_After_Tax": "46,658"
   },
   {
     "Neighbourhood": "South Parkdale/King West",
-    "Average Household Income Before Taxes": "86,381",
-    "Median Household Income Before Taxes": "63,425",
-    "Average Household Income After Taxes": "68,807",
-    "Median Household Income After Taxes": "54,381"
+    "Avg_Income_Before_Tax": "86,381",
+    "Median_Income_Before_Tax": "63,425",
+    "Avg_Income_After_Tax": "68,807",
+    "Median_Income_After_Tax": "54,381"
   },
   {
     "Neighbourhood": "St. Andrew-Windfields",
-    "Average Household Income Before Taxes": "222,478",
-    "Median Household Income Before Taxes": "98,420",
-    "Average Household Income After Taxes": "157,029",
-    "Median Household Income After Taxes": "84,525"
+    "Avg_Income_Before_Tax": "222,478",
+    "Median_Income_Before_Tax": "98,420",
+    "Avg_Income_After_Tax": "157,029",
+    "Median_Income_After_Tax": "84,525"
   },
   {
     "Neighbourhood": "Stonegate-Queensway",
-    "Average Household Income Before Taxes": "124,012",
-    "Median Household Income Before Taxes": "85,138",
-    "Average Household Income After Taxes": "94,712",
-    "Median Household Income After Taxes": "72,941"
+    "Avg_Income_Before_Tax": "124,012",
+    "Median_Income_Before_Tax": "85,138",
+    "Avg_Income_After_Tax": "94,712",
+    "Median_Income_After_Tax": "72,941"
   },
   {
     "Neighbourhood": "Tam O'Shanter-Sullivan",
-    "Average Household Income Before Taxes": "74,551",
-    "Median Household Income Before Taxes": "58,246",
-    "Average Household Income After Taxes": "64,886",
-    "Median Household Income After Taxes": "52,871"
+    "Avg_Income_Before_Tax": "74,551",
+    "Median_Income_Before_Tax": "58,246",
+    "Avg_Income_After_Tax": "64,886",
+    "Median_Income_After_Tax": "52,871"
   },
   {
     "Neighbourhood": "The Beaches",
-    "Average Household Income Before Taxes": "166,462",
-    "Median Household Income Before Taxes": "100,365",
-    "Average Household Income After Taxes": "121,388",
-    "Median Household Income After Taxes": "82,713"
+    "Avg_Income_Before_Tax": "166,462",
+    "Median_Income_Before_Tax": "100,365",
+    "Avg_Income_After_Tax": "121,388",
+    "Median_Income_After_Tax": "82,713"
   },
   {
     "Neighbourhood": "Thorncliffe Park",
-    "Average Household Income Before Taxes": "56,502",
-    "Median Household Income Before Taxes": "46,595",
-    "Average Household Income After Taxes": "50,262",
-    "Median Household Income After Taxes": "43,628"
+    "Avg_Income_Before_Tax": "56,502",
+    "Median_Income_Before_Tax": "46,595",
+    "Avg_Income_After_Tax": "50,262",
+    "Median_Income_After_Tax": "43,628"
   },
   {
     "Neighbourhood": "University/Annex",
-    "Average Household Income Before Taxes": "165,206",
-    "Median Household Income Before Taxes": "67,995",
-    "Average Household Income After Taxes": "118,910",
-    "Median Household Income After Taxes": "59,434"
+    "Avg_Income_Before_Tax": "165,206",
+    "Median_Income_Before_Tax": "67,995",
+    "Avg_Income_After_Tax": "118,910",
+    "Median_Income_After_Tax": "59,434"
   },
   {
     "Neighbourhood": "Uxbridge",
-    "Average Household Income Before Taxes": "124,982",
-    "Median Household Income Before Taxes": "98,910",
-    "Average Household Income After Taxes": "99,170",
-    "Median Household Income After Taxes": "84,987"
+    "Avg_Income_Before_Tax": "124,982",
+    "Median_Income_Before_Tax": "98,910",
+    "Avg_Income_After_Tax": "99,170",
+    "Median_Income_After_Tax": "84,987"
   },
   {
     "Neighbourhood": "Victoria Village",
-    "Average Household Income Before Taxes": "66,525",
-    "Median Household Income Before Taxes": "51,867",
-    "Average Household Income After Taxes": "57,242",
-    "Median Household Income After Taxes": "46,841"
+    "Avg_Income_Before_Tax": "66,525",
+    "Median_Income_Before_Tax": "51,867",
+    "Avg_Income_After_Tax": "57,242",
+    "Median_Income_After_Tax": "46,841"
   },
   {
     "Neighbourhood": "Waterfront Communities -The Island",
-    "Average Household Income Before Taxes": "104,994",
-    "Median Household Income Before Taxes": "78,479",
-    "Average Household Income After Taxes": "80,760",
-    "Median Household Income After Taxes": "65,912"
+    "Avg_Income_Before_Tax": "104,994",
+    "Median_Income_Before_Tax": "78,479",
+    "Avg_Income_After_Tax": "80,760",
+    "Median_Income_After_Tax": "65,912"
   },
   {
     "Neighbourhood": "West Hill",
-    "Average Household Income Before Taxes": "70,253",
-    "Median Household Income Before Taxes": "56,051",
-    "Average Household Income After Taxes": "61,559",
-    "Median Household Income After Taxes": "51,003"
+    "Avg_Income_Before_Tax": "70,253",
+    "Median_Income_Before_Tax": "56,051",
+    "Avg_Income_After_Tax": "61,559",
+    "Median_Income_After_Tax": "51,003"
   },
   {
     "Neighbourhood": "West Humber-Clairville",
-    "Average Household Income Before Taxes": "81,133",
-    "Median Household Income Before Taxes": "70,741",
-    "Average Household Income After Taxes": "71,699",
-    "Median Household Income After Taxes": "63,563"
+    "Avg_Income_Before_Tax": "81,133",
+    "Median_Income_Before_Tax": "70,741",
+    "Avg_Income_After_Tax": "71,699",
+    "Median_Income_After_Tax": "63,563"
   },
   {
     "Neighbourhood": "Westminster-Branson",
-    "Average Household Income Before Taxes": "68,984",
-    "Median Household Income Before Taxes": "54,101",
-    "Average Household Income After Taxes": "60,308",
-    "Median Household Income After Taxes": "49,867"
+    "Avg_Income_Before_Tax": "68,984",
+    "Median_Income_Before_Tax": "54,101",
+    "Avg_Income_After_Tax": "60,308",
+    "Median_Income_After_Tax": "49,867"
   },
   {
     "Neighbourhood": "Weston",
-    "Average Household Income Before Taxes": "60,230",
-    "Median Household Income Before Taxes": "45,696",
-    "Average Household Income After Taxes": "52,849",
-    "Median Household Income After Taxes": "42,405"
+    "Avg_Income_Before_Tax": "60,230",
+    "Median_Income_Before_Tax": "45,696",
+    "Avg_Income_After_Tax": "52,849",
+    "Median_Income_After_Tax": "42,405"
   },
   {
     "Neighbourhood": "Wexford-Maryvale",
-    "Average Household Income Before Taxes": "76,778",
-    "Median Household Income Before Taxes": "62,837",
-    "Average Household Income After Taxes": "66,343",
-    "Median Household Income After Taxes": "56,998"
+    "Avg_Income_Before_Tax": "76,778",
+    "Median_Income_Before_Tax": "62,837",
+    "Avg_Income_After_Tax": "66,343",
+    "Median_Income_After_Tax": "56,998"
   },
   {
     "Neighbourhood": "Whitchurch/Stouffville",
-    "Average Household Income Before Taxes": "130,938",
-    "Median Household Income Before Taxes": "102,507",
-    "Average Household Income After Taxes": "104,529",
-    "Median Household Income After Taxes": "87,436"
+    "Avg_Income_Before_Tax": "130,938",
+    "Median_Income_Before_Tax": "102,507",
+    "Avg_Income_After_Tax": "104,529",
+    "Median_Income_After_Tax": "87,436"
   },
   {
     "Neighbourhood": "Willowdale East/Newtonbrook East",
-    "Average Household Income Before Taxes": "87,345",
-    "Median Household Income Before Taxes": "61,725",
-    "Average Household Income After Taxes": "70,555",
-    "Median Household Income After Taxes": "54,818"
+    "Avg_Income_Before_Tax": "87,345",
+    "Median_Income_Before_Tax": "61,725",
+    "Avg_Income_After_Tax": "70,555",
+    "Median_Income_After_Tax": "54,818"
   },
   {
     "Neighbourhood": "Willowdale West/Newtonbrook West",
-    "Average Household Income Before Taxes": "79,752",
-    "Median Household Income Before Taxes": "56,942",
-    "Average Household Income After Taxes": "66,362",
-    "Median Household Income After Taxes": "51,139"
+    "Avg_Income_Before_Tax": "79,752",
+    "Median_Income_Before_Tax": "56,942",
+    "Avg_Income_After_Tax": "66,362",
+    "Median_Income_After_Tax": "51,139"
   },
   {
     "Neighbourhood": "Willowridge-Martingrove-Richview",
-    "Average Household Income Before Taxes": "92,341",
-    "Median Household Income Before Taxes": "71,584",
-    "Average Household Income After Taxes": "76,777",
-    "Median Household Income After Taxes": "63,848"
+    "Avg_Income_Before_Tax": "92,341",
+    "Median_Income_Before_Tax": "71,584",
+    "Avg_Income_After_Tax": "76,777",
+    "Median_Income_After_Tax": "63,848"
   },
   {
     "Neighbourhood": "Woburn",
-    "Average Household Income Before Taxes": "70,455",
-    "Median Household Income Before Taxes": "58,921",
-    "Average Household Income After Taxes": "62,213",
-    "Median Household Income After Taxes": "53,645"
+    "Avg_Income_Before_Tax": "70,455",
+    "Median_Income_Before_Tax": "58,921",
+    "Avg_Income_After_Tax": "62,213",
+    "Median_Income_After_Tax": "53,645"
   },
   {
     "Neighbourhood": "Woodbine Corridor/Greenwood-Coxwell",
-    "Average Household Income Before Taxes": "93,052",
-    "Median Household Income Before Taxes": "72,792",
-    "Average Household Income After Taxes": "76,188",
-    "Median Household Income After Taxes": "63,529"
+    "Avg_Income_Before_Tax": "93,052",
+    "Median_Income_Before_Tax": "72,792",
+    "Avg_Income_After_Tax": "76,188",
+    "Median_Income_After_Tax": "63,529"
   },
   {
     "Neighbourhood": "Woodbine-Lumsden",
-    "Average Household Income Before Taxes": "89,697",
-    "Median Household Income Before Taxes": "74,608",
-    "Average Household Income After Taxes": "74,266",
-    "Median Household Income After Taxes": "65,104"
+    "Avg_Income_Before_Tax": "89,697",
+    "Median_Income_Before_Tax": "74,608",
+    "Avg_Income_After_Tax": "74,266",
+    "Median_Income_After_Tax": "65,104"
   },
   {
     "Neighbourhood": "Wychwood",
-    "Average Household Income Before Taxes": "101,895",
-    "Median Household Income Before Taxes": "66,089",
-    "Average Household Income After Taxes": "80,706",
-    "Median Household Income After Taxes": "58,081"
+    "Avg_Income_Before_Tax": "101,895",
+    "Median_Income_Before_Tax": "66,089",
+    "Avg_Income_After_Tax": "80,706",
+    "Median_Income_After_Tax": "58,081"
   },
   {
     "Neighbourhood": "Yonge-Eglinton",
-    "Average Household Income Before Taxes": "150,401",
-    "Median Household Income Before Taxes": "80,896",
-    "Average Household Income After Taxes": "110,037",
-    "Median Household Income After Taxes": "67,160"
+    "Avg_Income_Before_Tax": "150,401",
+    "Median_Income_Before_Tax": "80,896",
+    "Avg_Income_After_Tax": "110,037",
+    "Median_Income_After_Tax": "67,160"
   },
   {
     "Neighbourhood": "Yonge-St. Clair",
-    "Average Household Income Before Taxes": "175,692",
-    "Median Household Income Before Taxes": "80,136",
-    "Average Household Income After Taxes": "124,099",
-    "Median Household Income After Taxes": "66,467"
+    "Avg_Income_Before_Tax": "175,692",
+    "Median_Income_Before_Tax": "80,136",
+    "Avg_Income_After_Tax": "124,099",
+    "Median_Income_After_Tax": "66,467"
   },
   {
     "Neighbourhood": "Yorkdale-Glen Park",
-    "Average Household Income Before Taxes": "82,802",
-    "Median Household Income Before Taxes": "63,778",
-    "Average Household Income After Taxes": "70,717",
-    "Median Household Income After Taxes": "57,188"
+    "Avg_Income_Before_Tax": "82,802",
+    "Median_Income_Before_Tax": "63,778",
+    "Avg_Income_After_Tax": "70,717",
+    "Median_Income_After_Tax": "57,188"
   }
 ]

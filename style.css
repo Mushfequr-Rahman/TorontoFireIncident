@@ -65,6 +65,14 @@ div.tooltip {
     z-index: 1;
 }
 
+#slider {
+    position: absolute;
+    bottom: 8px;
+    right: 16px;
+    font-size: 18px;
+    color: white;
+}
+
 #date_filter {
     position: fixed;
     margin-left: 1rem;
