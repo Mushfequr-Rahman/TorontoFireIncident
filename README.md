@@ -1,6 +1,6 @@
 # Toronto Fire Incident
 
-![demo](./images/latest-output.png)
+![demo](./images/latest-demo.gif)
 
 ## Background
 
@@ -13,6 +13,8 @@ We chose the Toronto Fire incidents data set for this project since we want to c
 3. Move into the directory `cd TorontoFireIncident`
 4. Run the application `python3 -m http.server 8080`
 5. Open your browser and go to `http://0.0.0.0:8080/`
+
+Note: recommended browser is **Google Chrome**
 
 
 ## Datasets
@@ -29,11 +31,17 @@ We chose the Toronto Fire incidents data set for this project since we want to c
 - [Jessica](https://github.com/jwdjj)
 
 
-## Acknowledgement
+## Known Issues
+- A known "brush" issue within [d3 community](https://github.com/d3/d3-brush/issues/60) on Firefox and IE Edge
+- Not recommended at all to run this application on Safari
 
-- http://bl.ocks.org/michellechandra/0b2ce4923dc9b5809922 for base code on showing the map
-- https://www.r-bloggers.com/plotting-choropleths-from-shapefiles-in-r-with-ggmap-toronto-neighbourhoods-by-population/ for sketch reference
-- http://cityinsight-interface.ssg.coop/toronto-emissions for sketch reference
-- https://public.tableau.com/profile/lilly.tong#!/vizhome/shared/HNH4PXQRX for sketch and data reference
-- https://embed.plnkr.co/plunk/gE1xQu for box legend
-- http://bl.ocks.org/timelyportfolio/5c136de85de1c2abb6fc for date filter
+
+## Acknowledgements
+
+- [Map Base Code](http://bl.ocks.org/michellechandra/0b2ce4923dc9b5809922)
+- [Legend Base Code](https://embed.plnkr.co/plunk/gE1xQu)
+- [Date Filter Base Code](http://bl.ocks.org/timelyportfolio/5c136de85de1c2abb6fc)
+- [Tooltip Base Code](https://bl.ocks.org/tiffylou/88f58da4599c9b95232f5c89a6321992 )
+- [Sketch Reference 1](https://www.r-bloggers.com/plotting-choropleths-from-shapefiles-in-r-with-ggmap-toronto-neighbourhoods-by-population/ )
+- [Sketch Reference 2](http://cityinsight-interface.ssg.coop/toronto-emissions)
+- [Sketch Reference 3](https://public.tableau.com/profile/lilly.tong#!/vizhome/shared/HNH4PXQRX)
