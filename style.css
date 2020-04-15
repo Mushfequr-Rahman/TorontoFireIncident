@@ -22,13 +22,6 @@ body {
     stroke-width: 1.5px;
 }
 
-
-/*
-.map_neighbourhood {
-    fill: #126AD2;
-}
-*/
-
 .map_neighbourhood:hover {
     fill: #636363;
     cursor: pointer;

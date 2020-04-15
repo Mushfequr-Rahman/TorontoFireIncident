@@ -37,6 +37,13 @@ Note: recommended browser is **Google Chrome**
 ## Known Issues
 - A known "brush" issue within [d3 community](https://github.com/d3/d3-brush/issues/60) on Firefox and IE Edge
 - Not recommended at all to run this application on Safari
+- Minor issue on currently used d3 version [brush clear](https://github.com/d3/d3-brush/issues/10)
+
+## Potential fix and Implementation
+To answer if there is any correlation between average income of the neighbourhood to the number of incidents and average waiting time
+- [Not filtered by maximum value](https://github.com/jwdjj/TorontoFireIncident/blob/master/script.js#L175)
+- [Default value is not properly set](https://github.com/jwdjj/TorontoFireIncident/blob/master/script.js#L243)
+- [Cross-datasets problem, the names are not identical therefore some of it are not identified correctly](https://github.com/jwdjj/TorontoFireIncident/blob/master/script.js#L322)
 
 
 ## Acknowledgements
