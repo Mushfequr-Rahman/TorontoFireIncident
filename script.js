@@ -6,7 +6,7 @@ d3.json("data/toronto_topo.json", function (error, toronto) {
         // Load Toronto Fire Station Dataset
         d3.json("data/toronto_fire_stations.json", function (error, station) {
             // Load Income Dataset here
-            //d3.json("data/toronto_neighbourhood_income.json", function(income){
+            //d3.json("data/toronto_neighbourhood_income.json", function(error, income){
             // console.log("Stations: ", station)
 
             // Filter down data
@@ -239,7 +239,7 @@ d3.json("data/toronto_topo.json", function (error, toronto) {
 
 // This function is to draw the map using the default data or newly filtered data
 // Called when: date filter and incident cause change
-function drawMap(toronto, fire, station/*, income_area = []*/) {
+function drawMap(toronto, fire, station, income_area = []) {
     // RE: INCOME FITLERING
     // Not working because income area pushed within a scope
     /*if(income_area.length == 0) {
@@ -458,8 +458,7 @@ function drawMap(toronto, fire, station/*, income_area = []*/) {
 
 // RE: INCOME FILTERING
 // This is code for range slider
-/*
-var max = 0;
+/*var max = 0;
 function formatNumber(num) {
     return num.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,')
 }

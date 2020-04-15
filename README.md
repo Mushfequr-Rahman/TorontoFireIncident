@@ -1,7 +1,7 @@
 # Toronto Fire Incident
 
 <p align="center">
-  <img width="750" height="400" src="./images/latest-demo.gif">
+  <img width="750" height="400" src="./images/latest-output.png">
 </p>
 
 ## Background
@@ -17,6 +17,12 @@ We chose the Toronto Fire incidents data set for this project since we want to c
 5. Open your browser and go to `http://0.0.0.0:8080/`
 
 Note: recommended browser is **Google Chrome**
+
+## Demo
+
+<p align="center">
+  <img width="750" height="400" src="./images/latest-demo.gif">
+</p>
 
 
 ## Datasets
@@ -44,6 +50,10 @@ To answer if there is any correlation between average income of the neighbourhoo
 - [Not filtered by maximum value](https://github.com/jwdjj/TorontoFireIncident/blob/master/script.js#L175)
 - [Default value is not properly set](https://github.com/jwdjj/TorontoFireIncident/blob/master/script.js#L243)
 - [Cross-datasets problem, the names are not identical therefore some of it are not identified correctly](https://github.com/jwdjj/TorontoFireIncident/blob/master/script.js#L322)
+
+<p align="center">
+  <img width="750" height="400" src="./images/demo-with-income-filter.gif">
+</p>
 
 
 ## Acknowledgements
