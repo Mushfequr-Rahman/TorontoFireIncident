@@ -4,6 +4,8 @@
   <img width="750" height="400" src="./images/latest-output.png">
 </p>
 
+[Our application is live](https://master.d369dxxeryvnrt.amplifyapp.com/)
+
 ## Background
 
 We chose the Toronto Fire incidents data set for this project since we want to create a visualization that allows the residents of Toronto and the city officials to have a better understanding of the services their fire department provides, the biggest causes of household fires and what streets have a higher chance of fires. Hopefully this visualization will aid stakeholders in making more informed decisions regarding city administration.
