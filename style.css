@@ -65,7 +65,7 @@ div.tooltip {
     z-index: 1;
 }
 
-#slider {
+#income {
     position: absolute;
     bottom: 8px;
     right: 16px;
@@ -98,3 +98,4 @@ div.tooltip {
 text {
     margin-top: 2px;
 }
+

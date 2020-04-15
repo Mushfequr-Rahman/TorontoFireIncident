@@ -1,6 +1,8 @@
 # Toronto Fire Incident
 
-![demo](./images/latest-demo.gif)
+<p align="center">
+  <img width="750" height="400" src="./images/latest-demo.gif">
+</p>
 
 ## Background
 
@@ -23,6 +25,7 @@ Note: recommended browser is **Google Chrome**
 - [Statistic Canada](https://www03.cmhc-schl.gc.ca/hmip-pimh/en/TableMapChart/TableMatchingCriteria?GeographyType=MetropolitanMajorArea&GeographyId=2270&CategoryLevel1=Population%2C%20Households%20and%20Housing%20Stock&CategoryLevel2=Household%20Income&ColumnField=HouseholdIncomeRange&RowField=Neighbourhood&SearchTags%5B0%5D.Key=Households&SearchTags%5B0%5D.Value=Number&SearchTags%5B1%5D.Key=Statistics&SearchTags%5B1%5D.Value=AverageAndMedian) for Toronto census data which provides income by neigbourhood
 - [Toronto Map - JSON](https://github.com/jasonicarter/toronto-geojson)
 - [Toronto Fire Station](https://www.toronto.ca/community-people/public-safety-alerts/understanding-emergency-services/fire-station-locations/)
+- [Toronto City Wards](https://open.toronto.ca/dataset/city-wards/) - related datasets, not used in the visualization
 
 
 ## Author

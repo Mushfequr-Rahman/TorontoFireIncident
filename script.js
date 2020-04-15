@@ -1,3 +1,4 @@
+var max = 0;
 // Load TopoJSON file
 d3.json("data/toronto_topo.json", function(error, toronto) {
 if (error) throw error;
@@ -5,6 +6,7 @@ if (error) throw error;
     d3.json("data/Fire_Incidents_Data.json", function(error, fire) {
     // Load Toronto Fire Station Dataset
         d3.json("data/toronto_fire_stations.json", function(error, station) {
+            d3.json("data/toronto_neighbourhood_income.json", function(income){
             // console.log("Stations: ", station)
             fire = fire.filter((d, i) => i % 10 == 0);
             og_data = fire
@@ -101,7 +103,7 @@ if (error) throw error;
                     return y(d.values.length);
                 });
 
-            console.log("Area: ", area)
+            //console.log("Area: ", area)
             var svg = d3.select("#picker").append("svg")
                 .attr("width", picker_width + margin.left + margin.right)
                 .attr("height", picker_height + margin.top + margin.bottom)
@@ -151,6 +153,7 @@ if (error) throw error;
 
                 d3.select("#map").remove()
                 d3.select("#color_key").remove()
+                d3.select("#legend").remove()
                 drawMap(toronto, fire, station)
             }
 
@@ -208,6 +211,22 @@ if (error) throw error;
             Ext_agent_app_or_defer_time: "2015-08-29T11:52:31"
             */
 
+            // RE: INCOME FILTERING
+            // DEBUG: Value filter not responding to max
+           /*rangeSlider();
+           var income_area = [];
+           d3.selectAll('input[type="range"]').on('change', function(e) {
+                for(var i in income){
+                    temp = parseInt(income[i].Avg_Income_Before_Tax.replace(/,/g, ""))
+                    if(temp >= 0 && temp <= parseInt(max))
+                        income_area.push(income[i].Neighbourhood);
+                }
+                d3.select("#map").remove()
+                d3.select("#color_key").remove()
+                d3.select("#legend").remove()
+                drawMap(toronto, fire, station, income_area)
+            });*/
+
             var choices = []
             d3.selectAll("input[name='cause']").on("change", function() {
                 var choices = [];
@@ -218,30 +237,36 @@ if (error) throw error;
                         choices.push(cb.property("value"));
                     }
                 });
+                
+                if(choices.length < 5) {
+                    var new_data = fire.filter(function(d, i) {
+                        if (choices.length > 0) {
+                            my_choices = ""
+                                //console.log("Choices: ", choices)
+                            my_choices = choices.join(' ')
+                            temp = d.Possible_Cause
+                            temp = temp.split("-")
+                            temp = temp[1].toString()
 
-                var new_data = fire.filter(function(d, i) {
-                    if (choices.length > 0) {
-                        my_choices = ""
-                            //console.log("Choices: ", choices)
-                        my_choices = choices.join(' ')
-                        temp = d.Possible_Cause
-                        temp = temp.split("-")
-                        temp = temp[1].toString()
-
-                        //console.log(my_choices)
-                        //console.log("Sanity check: ", my_choices.includes(temp))
-                        return my_choices.includes(temp);
-                        choices = []
-                    } else return null;
-                })
+                            //console.log(my_choices)
+                            //console.log("Sanity check: ", my_choices.includes(temp))
+                            return my_choices.includes(temp);
+                            choices = []
+                        } else return null;
+                    })
+                } else {
+                    new_data = fire;
+                }
                 d3.select("#map").remove()
                 d3.select("#color_key").remove()
+                d3.select("#legend").remove()
                 drawMap(toronto, new_data, station)
 
+            });
+                
+                drawMap(toronto, fire, station)
 
             });
-
-            drawMap(toronto, fire, station)
 
         });
     });
@@ -249,7 +274,14 @@ if (error) throw error;
 });
 
 
-function drawMap(toronto, fire, station) {
+function drawMap(toronto, fire, station/*, income_area = []*/) {
+    // RE: INCOME FITLERING
+    // Not working because income area pushed within a scope
+    /*if(income_area.length == 0) {
+        d3.json("data/toronto_neighbourhood_income.json", function(income){
+            for(var i in income) income_area.push(income[i].Neighbourhood);
+        });
+    }*/
     var mapWidth = 1050,
         mapHeight = 1050;
 
@@ -270,7 +302,6 @@ function drawMap(toronto, fire, station) {
         .attr("y", 20)
         .attr("x", 0)
         .attr("class", "map_neighbourhood_name")
-
 
     var neighbourhoods = topojson.feature(toronto, toronto.objects.toronto);
 
@@ -322,7 +353,21 @@ function drawMap(toronto, fire, station) {
         .attr("fill", function(d, i) {
             //console.log("Data", list[i])
             //console.log('color: ', colorScale(list[i]))
-            return colorScale(list[i]);
+
+            // RE: INCOME FILTERING
+            /*var lastword = d.properties.name.lastIndexOf(" ");
+            temp = d.properties.name.substring(0, lastword);
+            var index = -1
+            for (var j= income_area.length; j--;) {
+                if (income_area[j].indexOf(temp)>=0){
+                    index = j;
+                    break;
+                }
+           }
+            if(index < 0)
+                return "#808080";
+            else*/
+                return colorScale(list[i]);
         })
         .on("mouseover", mouseover)
         .on("mouseout", mouseout)
@@ -429,7 +474,7 @@ function drawMap(toronto, fire, station) {
         .enter()
         .append('text')
         .attr('x', 30)
-        .attr("font-size", "10px")
+        .attr("font-size", "12px")
         .attr('y', function(d, i) {
             return (i + 1) * 22;
         })
@@ -456,5 +501,29 @@ function drawMap(toronto, fire, station) {
     var yAxis = d3.svg.axis().scale(y).orient("bottom").ticks(5);
 
     console.log("Finished Drawing map")
-
 }
+
+// RE: INCOME FILTERING
+// This is code for range slider
+/*function formatNumber(num) {
+    return num.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,')
+}
+
+var rangeSlider = function(){
+    var slider = $('.range-slider'),
+        range = $('.range-slider__range'),
+        value = $('.range-slider__value');
+      
+    slider.each(function(){
+  
+      value.each(function(){
+        var value = $(this).prev().attr('value');
+        $(this).html("$ " + value);
+      });
+  
+      range.on('input', function(){
+        max = this.value;
+        $(this).next(value).html("$ " + formatNumber(this.value));
+      });
+    });
+  };*/
